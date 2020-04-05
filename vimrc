@@ -19,6 +19,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf' 
 Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -48,10 +49,6 @@ map <C-b> :FzfFiles<CR>
 " Vim hotkeys
 map H ^
 map L $
-
-inoremap { {}<Left>
-inoremap [ []<Left>
-
 
 set backspace=indent,eol,start
 
