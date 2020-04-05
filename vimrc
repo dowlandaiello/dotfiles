@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', {'do': 'cargo +nightly install racer -f; rustup component add rls rust-analysis rust-src'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
@@ -14,6 +14,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'tbastos/vim-lua'
 Plug 'dense-analysis/ale'
 Plug 'vim-syntastic/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-grammarous'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf' 
@@ -48,6 +49,12 @@ map <C-b> :FzfFiles<CR>
 map H ^
 map L $
 
+inoremap { {}<Left>
+inoremap [ []<Left>
+
+
+set backspace=indent,eol,start
+
 " LaTeX hotkeys
 map I :! pdflatex %<CR><CR>
 map R :! pdflatex % && pkill -HUP mupdf<CR><CR>
@@ -80,3 +87,6 @@ augroup filetypedetect
   autocmd FileType js        setlocal expandtab    shiftwidth=2 tabstop=2
   autocmd FileType tex       setlocal noexpandtab  shiftwidth=4 tabstop=4
   autocmd FileType haskell   setlocal expandtab    shiftwidth=4 tabstop=4
+
+" Prefer rust-analyzer over syntastic
+let g:syntastic_mode_map = { 'passive_filetypes': ['rust'] }
