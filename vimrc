@@ -1,9 +1,10 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'fatih/molokai'
 Plug 'rust-lang/rust.vim', {'do': 'cargo +nightly install racer -f; rustup component add rls rust-analysis rust-src'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'leafgarland/typescript-vim'
@@ -27,12 +28,20 @@ set nocompatible
 set ttyfast
 
 " Visual preferences
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+
 set number
 set showcmd
 set background=dark
-syntax enable
+set t_Co=256
+syntax on
 
-colorscheme nord
+colorscheme molokai
 
 " Nerdtree preferences
 autocmd StdinReadPre * let s:std_in=1
@@ -53,9 +62,8 @@ map L $
 set backspace=indent,eol,start
 
 " LaTeX hotkeys
-map I :! pdflatex %<CR><CR>
-map R :! pdflatex % && pkill -HUP mupdf<CR><CR>
-map S :! mupdf $(echo % \| sed 's/tex$/pdf/') & disown<CR><CR>
+map <C-I> :! pdflatex % && pkill -HUP mupdf-gl<CR><CR>
+map <C-S> :! open $(echo % \| sed 's/tex$/pdf/') & disown<CR><CR>
 
 " Panes, but better
 set splitright
@@ -84,6 +92,7 @@ augroup filetypedetect
   autocmd FileType js        setlocal expandtab    shiftwidth=2 tabstop=2
   autocmd FileType tex       setlocal noexpandtab  shiftwidth=4 tabstop=4
   autocmd FileType haskell   setlocal expandtab    shiftwidth=4 tabstop=4
+  autocmd FileType sh        setlocal expandtab    shiftwidth=4 tabstop=4
 
 " Prefer rust-analyzer over syntastic
 let g:syntastic_mode_map = { 'passive_filetypes': ['rust'] }
