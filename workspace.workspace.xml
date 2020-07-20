@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PREFERENCES VERSION="6">
+  <WORKSPACE ACCOUNT_MODELS="ABRWVE1fU0VSSUFMSVpBVElPTl9WMAAAAAEAFFZBTV9TRVJJQUxJWkFUSU9OX1Yzf_C9wAAAAA9WaXJ0dWFsIEFjY291bnQAAAACAAAAAH_wvb8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABcZddB70AAAFxl10HvX_wvcAAAAAAAAAAB1ZJUlRVQUwABkZVVFVSRQAGTUFSS0VUAANEQVkAB1JFR1VMQVIABE5PTkUACUFVVE9NQVRJQwAAAAAAAAAAAARCRVNUAAhSRUpFQ1RFRABNWW91ciBidXlpbmcgcG93ZXIgd2lsbCBiZSBiZWxvdyB6ZXJvICgkMjQ2LDUwMC4wMCkgaWYgdGhpcyBvcmRlciBpcyBhY2NlcHRlZC4AHVZBTV9TRVJJQUxJWkFUSU9OX05VTExfU1RSSU5HAAAAAAADTUFOQEkAAAAAAABASQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA01BTn_4AAAAAAAAf_gAAAAAAAAAA01BTn_4AAAAAAAAf_gAAAAAAAAAA1NURH_4AAAAAAAAAAAAAAAAAAEACy9DTFUyMDpYTllNADhMaWdodCBTd2VldCBDcnVkZSBPaWwgRnV0dXJlcyxTZXAtMjAyMCxFVEggKHByZXYuIC9DTFUwKQAGRlVUVVJFQEkAAAAAAAAACVVOREVGSU5FRAAAAAAAAAAAAAAAAH_wvcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABcZdd9V4AAAFxl131Xn_wvcAAAAAAAAAAB1ZJUlRVQUwABkZVVFVSRQAGTUFSS0VUAANEQVkAB1JFR1VMQVIABE5PTkUACUFVVE9NQVRJQwAAAAAAAAAAAARCRVNUAAZGSUxMRUQAHVZBTV9TRVJJQUxJWkFUSU9OX05VTExfU1RSSU5HAB1WQU1fU0VSSUFMSVpBVElPTl9OVUxMX1NUUklORwAAAAAAA01BTkAUAAAAAAAAQBQAAAAAAABAFAAAAAAAAAAAAAAAAAAAAANNQU5_-AAAAAAAAH_4AAAAAAAAAANNQU5_-AAAAAAAAH_4AAAAAAAAAANTVER_-AAAAAAAAAAAAAAAAAABAAsvQ0xVMjA6WE5ZTQA4TGlnaHQgU3dlZXQgQ3J1ZGUgT2lsIEZ1dHVyZXMsU2VwLTIwMjAsRVRIIChwcmV2LiAvQ0xVMCkABkZVVFVSRUAUAAAAAAAAAAlVTkRFRklORUQAAAAAAAAAAAAAAAEAAAAAf_C9vwAdQVVUTy0yMTQ2NDgzNjQ4LTE1ODczODI0NDk1MDIAHVZBTV9TRVJJQUxJWkFUSU9OX05VTExfU1RSSU5HAAABcZdd9V4AAAAAf_C9wH_wvcAAAAAAAAAAB1ZJUlRVQUwABkZVVFVSRQAERklMTAAFVkFMSURAFAAAAAAAAAAEQkVTVAAGRklMTEVEAAAAAAAAAAAAHVZBTV9TRVJJQUxJWkFUSU9OX05VTExfU1RSSU5HAB1WQU1fU0VSSUFMSVpBVElPTl9OVUxMX1NUUklORwAJQVVUT01BVElDAAAAAAAdVkFNX1NFUklBTElaQVRJT05fTlVMTF9TVFJJTkcAAAAAAAAAAQALL0NMVTIwOlhOWU0AOExpZ2h0IFN3ZWV0IENydWRlIE9pbCBGdXR1cmVzLFNlcC0yMDIwLEVUSCAocHJldi4gL0NMVTApAAZGVVRVUkVAFAAAAAAAAEA-2ZmZmZmaAAAAAAAGTUFSS0VUAAAAAAAAAAQAAAAAf_C9wQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH_wvcAAAAAAAAAAA1VTJAADVVMkAARDQVNIQPhqAAAAAAAAAAAAAAAAAAADRk5EAAVWQUxJRAAJRGVtbyBDYXNoAAAAAAAAAAAAAAROT05FAAAAAH_wvcQAAAAAAAAAAAAAAAB_8L3AAAAAAH_wvb8AAAFxl131XgAAR8R_8L3AAAAAAAAAAANVUyQAA1VTJAAEQ0FTSMEC1FAAAAAAAAAAAAAAAAAAA1RSRAAFVkFMSUQAIVZJUlRVQUwgQk9UICs1IC9DTFUyMDpYTllNIEAzMC44NQAAAAAAAAAAAAAETk9ORQAAAAB_8L3CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf_C9wAAAAAAAAAAGVVNEJEZYAANVU0QACkZPUkVYX0NBU0hA-GoAAAAAAAAAAAAAAAAAAANGTkQABVZBTElEAA9EZW1vIEZvcmV4IENhc2gAAAAAAAAAAAAABE5PTkUAAAAAf_C9wwAAAAAAAAAAAAAAAH_wvcAAAAAAf_C9vwAAAXGXXfVeAABHxH_wvcAAAAAAAAAACy9DTFUyMDpYTllNADhMaWdodCBTd2VldCBDcnVkZSBPaWwgRnV0dXJlcyxTZXAtMjAyMCxFVEggKHByZXYuIC9DTFUwKQAGRlVUVVJFQBQAAAAAAABBAtRQAAAAAAADVFJEAAVWQUxJRAAhVklSVFVBTCBCT1QgKzUgL0NMVTIwOlhOWU0gQDMwLjg1AAAAAAAAAAAAAAROT05F" POSITION="1587384336327">
+    <DETACHED_FRAME_0 ALWAYS_ON_TOP="false" HEIGHT="957" LAYOUT="MAIN" STATE="NORMAL" WIDTH="1680" X="0" Y="23">
+      <AUDIO URL=""/>
+      <COM.DEVEXPERTS.TOS.UI.USER.ALERT.LASTSOUNDTAGKEY LAST_SOUNDTAG="Bell"/>
+      <DESKTOP ALERTS_THINK_SCRIPT_EDITOR_HEIGHT="530" ALERTS_THINK_SCRIPT_EDITOR_WIDTH="850" ALERTS_THINK_SCRIPT_ERROR_PANEL_HEIGHT="65" ALERTS_THINK_SCRIPT_HELP_DIVIDER_LOCATION="176" ALERTS_THINK_SCRIPT_SIDE_PANEL_WIDTH="283" ALLOCATION_MODE="Single Account" CUSTOM_QUOTES_THINK_SCRIPT_EDITOR_HEIGHT="400" CUSTOM_QUOTES_THINK_SCRIPT_EDITOR_WIDTH="1000" CUSTOM_QUOTES_THINK_SCRIPT_ERROR_PANEL_HEIGHT="65" CUSTOM_QUOTES_THINK_SCRIPT_HELP_DIVIDER_LOCATION="133" CUSTOM_QUOTES_THINK_SCRIPT_SIDE_PANEL_WIDTH="333" FILTERS_THINK_SCRIPT_EDITOR_HEIGHT="400" FILTERS_THINK_SCRIPT_EDITOR_WIDTH="1000" FILTERS_THINK_SCRIPT_ERROR_PANEL_HEIGHT="65" FILTERS_THINK_SCRIPT_HELP_DIVIDER_LOCATION="133" FILTERS_THINK_SCRIPT_SIDE_PANEL_WIDTH="333" LAST_USED_LAYOUT="TOS CHARTS" MRU_SYMBOLS="STTMINWGFG:FRED,C,/ES:XCME" ORDER_THINK_SCRIPT_EDITOR_HEIGHT="530" ORDER_THINK_SCRIPT_EDITOR_WIDTH="850" ORDER_THINK_SCRIPT_ERROR_PANEL_HEIGHT="65" ORDER_THINK_SCRIPT_HELP_DIVIDER_LOCATION="176" ORDER_THINK_SCRIPT_SIDE_PANEL_WIDTH="283" PATTERN_EDITOR_DIVIDER="400" PATTERN_EDITOR_HEIGHT="800" PATTERN_EDITOR_WIDTH="1000" SAVE_ALLOCATION_MODE="false" THINK_SCRIPT_ALERT_AUTOCOMPLETE="true" THINK_SCRIPT_ALERT_POPUP_HELP="true" THINK_SCRIPT_EDITOR_FONT_FAMILY="Monospaced" THINK_SCRIPT_EDITOR_FONT_SIZE="16" THINK_SCRIPT_EDITOR_HEIGHT="400" THINK_SCRIPT_EDITOR_WIDTH="1000" THINK_SCRIPT_ERROR_PANEL_HEIGHT="65" THINK_SCRIPT_HELP_DIVIDER_LOCATION="133" THINK_SCRIPT_SIDE_PANEL="Reference" THINK_SCRIPT_SIDE_PANEL_WIDTH="333" UD_WARNING="true">
+        <ACCNT_STMT/>
+        <ACCOUNT_GROUP FOREX_REPORT_LAYOUT_CONFIG="{&#10;ORDER_ENTRY_EXPANDED=false&#10;}&#10;" ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="MONITOR">
+          <FX_REPORT ORDER_ENTRY_EXPANDED="false"/>
+        </ACCOUNT_GROUP>
+        <ACTIVE_ACCOUNT_HEADLINE>
+          <ACTIVE_ACCOUNT COMPONENTS="OPTION_BP,STOCK_BP,NET_LIQ,FX_BP,DTBP,DT_LEFT,CASH_AND_MONEY_MARKET_FUNDS" ITEM_DISPLAY_MODE="HIDE_UNSED"/>
+        </ACTIVE_ACCOUNT_HEADLINE>
+        <ACTIVE_TRADER/>
+        <ALERTS/>
+        <ALLOCATION QUANTITIES=""/>
+        <ANALYZE_GROUP ORDER_ENTRY_EXPANDED="false" PALETTE="ff66ff,ffff,ff7e9c,b5b5b5,e7be00,ff5f5f,c531,797979,f9e9a7,ffffff,ff7e00,c0bfff,f6bcb3,74bde8,ea88ff,8fefbf" SELECTED_LAYOUT="ADD_SIMULATED_TRADES" SYMBOL_GROUP="1">
+          <ADD_SIMULATED_TRADES ORDER_ENTRY_EXPANDED="false"/>
+          <DROPDOWN EXPANDED="true"/>
+          <DROPDOWN1 EXPANDED="false"/>
+          <DROPDOWN2 EXPANDED="false"/>
+          <DROPDOWN3 EXPANDED="false"/>
+          <DROPDOWN4 EXPANDED="false"/>
+          <DROPDOWN5 EXPANDED="false"/>
+          <FUTURES EXPANDED="true"/>
+          <OPTIONS_CHART_PANEL DELTA_SUBGRAPH="false" HIGHLIGHT_TICKS="false" LOCK_TIME_AXIS="false" PALETTE="ff66ff,ffff,ff7e9c,b5b5b5,e7be00,ff5f5f,c531,797979,f9e9a7,ffffff,ff7e00,c0bfff,f6bcb3,74bde8,ea88ff,8fefbf" PERCENT_AXIS="false" PRODUCT_DEPTH_MODE="FUTURES">
+            <COMBO_CHECK_BOX COLORS="" SELECTION=""/>
+            <FUTURES_CURVES CURVES_COUNT="1">
+              <CURVE_0 COLOR="-65536" DATE="-1" IS_HIDDEN="false" PRICE_TYPE="mark" SYMBOL="/ES:XCME"/>
+            </FUTURES_CURVES>
+            <OPTIONS_CHART/>
+            <OPTIONS_CHART_CONTROLS STRIKE_COUNT="All" VALUE="IMPL_VOL" VALUE2="IMPL_VOL" VIEW="ALL"/>
+          </OPTIONS_CHART_PANEL>
+          <OPTIONS_STATISTIC EXPANDED="false"/>
+          <OPTIONS_TIME_AND_SALES ALL_CONDITIONS="true" ALL_EXCHANGES="true" ALL_PRICE="true" ALL_QUANTITIES="true" ALL_SERIES="true" ALL_STRIKES="true" EXPANDED="false" SELECTED_CONDITIONS="" SELECTED_EXCHANGES="" SELECTED_SERIES="" SELECTED_SIDE="BOTH"/>
+          <OPTION_CHAIN EXPANDED="true"/>
+          <PROBABILITY_ANALYSIS ORDER_ENTRY_EXPANDED="false"/>
+          <PRODUCT_DEPTH EXPANDED="false"/>
+          <QSHEETPANEL QSHEET_CONFIGURATION_COLUMNS="LASTX,NET_CHANGE" STRIKE_QTY="ALL">
+            <ALLPRODUCTSPANELSMODEL>
+              <OPTION_CHAIN ORDERING="2" SWITCHED_ON="true"/>
+              <OPTION_STATISTICS ORDERING="3" SWITCHED_ON="true"/>
+              <OPTION_TIME_AND_SALES ORDERING="4" SWITCHED_ON="true"/>
+              <TRADE_GRID ORDERING="1" SWITCHED_ON="true"/>
+              <UNDERLYING ORDERING="0" SWITCHED_ON="true"/>
+              <WIDGET_360 ORDERING="5" SWITCHED_ON="true"/>
+            </ALLPRODUCTSPANELSMODEL>
+            <OPTIONSLISTPANEL/>
+            <OPTIONS_SELECT TEMPLATE_FILTER_NAME="Single">
+              <FUTURES_FILTER_NAME ALL_DELIVERABLES="true" ALL_EXCHANGES="true" ALL_EXPIRATION_DAYS="true" ALL_EXPIRATION_TYPES="true" ALL_SIDES="true" ALL_STRIKES="true" SELECTED_DELIVERABLES="REGULAR" SELECTED_EXCHANGES="COMPOSITE" SELECTED_EXPIRATION_TYPES="REGULAR" SELECTED_SIDE="BOTH" THEO_ADJ_TYPE="DOLLAR" THEO_DATE="18460" THEO_VOL_ADJ="0.0">
+                <THEO_ADJ_VALUES_NAME DOLLAR="0.0" PERCENT="0.0" SIGMA="0.0"/>
+              </FUTURES_FILTER_NAME>
+              <STOCK_FILTER_NAME ALL_DELIVERABLES="true" ALL_EXCHANGES="true" ALL_EXPIRATION_DAYS="true" ALL_EXPIRATION_TYPES="true" ALL_SIDES="true" ALL_STRIKES="true" SELECTED_DELIVERABLES="REGULAR" SELECTED_EXCHANGES="COMPOSITE" SELECTED_EXPIRATION_TYPES="REGULAR" SELECTED_SIDE="BOTH" THEO_ADJ_TYPE="DOLLAR" THEO_DATE="18460" THEO_VOL_ADJ="0.0">
+                <THEO_ADJ_VALUES_NAME DOLLAR="0.0" PERCENT="0.0" SIGMA="0.0"/>
+              </STOCK_FILTER_NAME>
+            </OPTIONS_SELECT>
+          </QSHEETPANEL>
+          <RISK_PROFILE>
+            <CHART_PANEL>
+              <C OFFSET="0.0" RATIO="1.0"/>
+            </CHART_PANEL>
+          </RISK_PROFILE>
+          <SIMULATION_PANEL SLICE_EXPAND="false" TRADES_EXPANDED="C">
+            <BALANCES UNSELECTED=""/>
+            <TRADES>
+              <PRICE_SLICES/>
+            </TRADES>
+          </SIMULATION_PANEL>
+          <SORTING/>
+          <SORTING1/>
+          <SORTING10/>
+          <SORTING11/>
+          <SORTING12/>
+          <SORTING13/>
+          <SORTING14/>
+          <SORTING15/>
+          <SORTING16/>
+          <SORTING17/>
+          <SORTING18/>
+          <SORTING19/>
+          <SORTING2/>
+          <SORTING20/>
+          <SORTING21/>
+          <SORTING22/>
+          <SORTING23/>
+          <SORTING24/>
+          <SORTING25/>
+          <SORTING26/>
+          <SORTING27/>
+          <SORTING28/>
+          <SORTING29/>
+          <SORTING3/>
+          <SORTING30/>
+          <SORTING31/>
+          <SORTING32/>
+          <SORTING33/>
+          <SORTING34/>
+          <SORTING35/>
+          <SORTING36/>
+          <SORTING37/>
+          <SORTING38/>
+          <SORTING39/>
+          <SORTING4/>
+          <SORTING40/>
+          <SORTING41/>
+          <SORTING42/>
+          <SORTING43/>
+          <SORTING44/>
+          <SORTING45/>
+          <SORTING46/>
+          <SORTING47 COLUMN="EXPIRATION" ORDER="1"/>
+          <SORTING48/>
+          <SORTING49 COLUMN="EXPIRATION" ORDER="1"/>
+          <SORTING5/>
+          <SORTING50/>
+          <SORTING51 COLUMN="EXPIRATION" ORDER="1"/>
+          <SORTING52/>
+          <SORTING53 COLUMN="EXPIRATION" ORDER="1"/>
+          <SORTING54/>
+          <SORTING55 COLUMN="EXPIRATION" ORDER="1"/>
+          <SORTING56/>
+          <SORTING57/>
+          <SORTING58/>
+          <SORTING59/>
+          <SORTING60/>
+          <SORTING61/>
+          <SORTING62/>
+          <SORTING63/>
+          <SORTING64/>
+          <SORTING65/>
+          <SORTING66/>
+          <SORTING67/>
+          <SORTING68/>
+          <SORTING69/>
+          <SORTING70/>
+          <SORTING71/>
+          <SORTING72/>
+          <SORTING73/>
+          <SORTING74/>
+          <SORTING75/>
+          <SORTING76/>
+          <SORTING77/>
+          <SORTING78/>
+          <SORTING79/>
+          <SORTING8/>
+          <SORTING80/>
+          <SORTING81/>
+          <SORTING82/>
+          <SORTING83/>
+          <SORTING84/>
+          <SORTING85/>
+          <SORTING86/>
+          <SORTING87/>
+          <SORTING88/>
+          <SORTING89/>
+          <SORTING9/>
+          <TRADE_GRID COLUMN_COUNT="3" DEFAULT_TYPE="LEVEL_II" EXPANDED="false" ROW_COUNT="1">
+            <CELL0 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="LEVEL_II" SIDEBAR_IS_ACTIVE="true" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+              <ACTIVETRADER VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <CHART VERTICAL="false" VISIBLE="false" WEIGHT="3.0"/>
+              <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <LEVEL_II SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0">
+                <SORTING COLUMN="BID" ORDER="-1"/>
+                <SORTING1 COLUMN="ASK" ORDER="1"/>
+              </LEVEL_II>
+              <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <TRADE CONFIGURATION_NAME="SINGLE" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_1>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_3>
+              </TRADE>
+            </CELL0>
+            <CELL1 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="LEVEL_II" SIDEBAR_IS_ACTIVE="true" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+              <ACTIVETRADER VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <CHART VERTICAL="false" VISIBLE="false" WEIGHT="3.0"/>
+              <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <LEVEL_II SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0">
+                <SORTING COLUMN="BID" ORDER="-1"/>
+                <SORTING1 COLUMN="ASK" ORDER="1"/>
+              </LEVEL_II>
+              <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <TRADE CONFIGURATION_NAME="SINGLE" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_1>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_3>
+              </TRADE>
+            </CELL1>
+            <CELL2 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="LEVEL_II" SIDEBAR_IS_ACTIVE="true" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+              <ACTIVETRADER VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <CHART VERTICAL="false" VISIBLE="false" WEIGHT="3.0"/>
+              <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <LEVEL_II SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0">
+                <SORTING COLUMN="BID" ORDER="-1"/>
+                <SORTING1 COLUMN="ASK" ORDER="1"/>
+              </LEVEL_II>
+              <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <TRADE CONFIGURATION_NAME="SINGLE" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_1>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_3>
+              </TRADE>
+            </CELL2>
+            <MODELNODE0 COUNT="3" ROWLAYOUT="true" TYPE="SPLIT" WEIGHT="0.0">
+              <MODELNODE0 COMPOSITENAME="CELL0" NAME="0" TYPE="LEAF" WEIGHT="0.3333333333333333"/>
+              <MODELNODE1 COMPOSITENAME="CELL1" NAME="1" TYPE="LEAF" WEIGHT="0.3333333333333333"/>
+              <MODELNODE2 COMPOSITENAME="CELL2" NAME="2" TYPE="LEAF" WEIGHT="0.3333333333333333"/>
+            </MODELNODE0>
+          </TRADE_GRID>
+          <UNDERLYING1 EXPANDED="true"/>
+          <UNDERLYING_PANEL FUTURES_DISPLAYING_MODE="ALL"/>
+        </ANALYZE_GROUP>
+        <CALENDAR/>
+        <CAPTIONS ENABLED="false"/>
+        <CHARTING CHART_GROUP_MANAGER="@v8@%0:com.devexperts.toschart.facade.persistence,1:java.util,2:com.devexperts.toschart.model%owner{chartAggregationPeriods:ChartAggregationPeriodArray0,chartAggregationPeriods=@ChartAggregationPeriodArray0}#%0.ChartGroupManagerPersistence{encodedMyToolsModel=&quot;{\&quot;items\&quot;:[{\&quot;tool\&quot;:\&quot;TRENDLINE\&quot;,\&quot;name\&quot;:\&quot;\&quot;},{\&quot;tool\&quot;:\&quot;TEXT_NOTE\&quot;,\&quot;name\&quot;:\&quot;\&quot;},{\&quot;loadedName\&quot;:\&quot;SimpleMovingAvg\&quot;,\&quot;type\&quot;:\&quot;STUDY\&quot;,\&quot;name\&quot;:\&quot;SimpleMovingAvg\&quot;}],\&quot;toggledItemIndex\&quot;:-1,\&quot;mode\&quot;:\&quot;SINGLE_CHART\&quot;,\&quot;viewMode\&quot;:\&quot;OFF\&quot;}&quot;,generalProperties=#%1.HashMap{^(&quot;showUnsavedDrawingsNotifications&quot;,&lt;T),^(&quot;showLogo&quot;,&lt;T),^(&quot;majorTimeZoneIds&quot;,#java.lang.String[10]{0=&quot;America/New_York&quot;,1=&quot;America/Chicago&quot;,2=&quot;America/Denver&quot;,3=&quot;America/Los_Angeles&quot;,4=&quot;Europe/London&quot;,5=&quot;Europe/Berlin&quot;,6=&quot;Europe/Moscow&quot;,7=&quot;Asia/Hong_Kong&quot;,8=&quot;Asia/Tokyo&quot;,9=&quot;Australia/Sydney&quot;}),^(&quot;quickTimeFrames&quot;,&quot;[1d:m, 5d:5m, 5d:15m, 10d:30m, 20d:h, 180d:4h, 1y:d, 3y:w]&quot;),^(&quot;timezone&quot;,&quot;America/New_York&quot;)},groups=#%1.ArrayList{+(#%0.ChartGroupPersistence{groupId=&quot;isolated&quot;,properties=#%1.HashMap{^(&quot;hideStatusString&quot;,&lt;T),^(&quot;databoxPin&quot;,&lt;T),^(&quot;databoxMode&quot;,!java.lang.Enum.valueOf:DataBoxMode0(*%2.DataBoxMode.class,&quot;NONE&quot;))}}),+(#%0.ChartGroupPersistence{groupId=&quot;default&quot;,properties=#%1.HashMap{^(&quot;hideStatusString&quot;,&lt;T),^(&quot;synchronizeCrosshair&quot;,&lt;F),^(&quot;databoxPin&quot;,&lt;T),^(&quot;databoxMode&quot;,@DataBoxMode0)}})}}" CORRECTIONS="" DISABLED_MESSAGES=""/>
+        <CHARTS_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="TOS CHARTS"/>
+        <CHAT>
+          <HIDDEN_USERS/>
+        </CHAT>
+        <COM.DEVEXPERTS.TOS.UI.USER.TFACE.GADGETSIDEBARSPLITPANE DIVIDER_LAST_LOCATION="34.81818" DIVIDER_LOCATION="26.545454"/>
+        <CONFIG PRIVACY_MODE="false"/>
+        <CONFIGURABLE_TAB SLIDER_PINNED="false"/>
+        <DISCLOSURES/>
+        <EARNINGS_LAYOUT CURRENT_VIEW="FIT_ALL" ORDER_ENTRY_EXPANDED="false" SYMBOL_GROUP="-1">
+          <EARNING_SETTINGS>
+            <COMPARE_MODE_MODEL_KEY>
+              <CHART_SELECTION_KEY ITEMS=""/>
+              <QUARTERS_SELECTION_KEY ITEMS=""/>
+            </COMPARE_MODE_MODEL_KEY>
+            <FIT_ALL_SETTINGS RELEASECOLOR="-1589760" WALL_STREETCOLOR="-16726735">
+              <EST_SETTINGS_KEY ITEMS=""/>
+              <EST_SRC_KEY ITEMS=""/>
+              <VOL_OPT_KEY ITEMS=""/>
+            </FIT_ALL_SETTINGS>
+          </EARNING_SETTINGS>
+        </EARNINGS_LAYOUT>
+        <EDUCATION_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="INVESTOOLS"/>
+        <ERROR_REPORT AUTO_SEND_REPORT="true"/>
+        <FLEX/>
+        <FOREX_TRADER/>
+        <FRED FRED_CATALOGUE="{&quot;selectedLevel&quot;:&quot;second_level&quot;,&quot;columns&quot;:[{&quot;categoryId&quot;:33831,&quot;scrollPosition&quot;:0,&quot;selectedPage&quot;:1}]}" FRED_CHART="{&quot;subscriptionKey&quot;:{&quot;instrument&quot;:{&quot;symbol&quot;:&quot;STTMINWGFG:FRED&quot;,&quot;description&quot;:&quot;Federal Minimum Wage Rate under the Federal Fair Labor Standards Act&quot;,&quot;frequencyType&quot;:&quot;ANNUAL&quot;,&quot;parentCategoryIds&quot;:[33831],&quot;fredUnits&quot;:&quot;Dollars per Hour&quot;,&quot;fredUnitsShort&quot;:&quot;$ per Hour&quot;,&quot;observationStartDate&quot;:-63158400000,&quot;observationEndDate&quot;:1451606400000,&quot;popularity&quot;:48,&quot;seasonalAdjustmentType&quot;:&quot;NOT_SEASONALLY_ADJUSTED&quot;},&quot;transformationParameters&quot;:{&quot;frequency&quot;:&quot;DEFAULT&quot;,&quot;aggregation&quot;:&quot;AVERAGE&quot;,&quot;unit&quot;:&quot;DEFAULT&quot;,&quot;indexDate&quot;:0},&quot;timeRange&quot;:{}},&quot;paintingSettings&quot;:{&quot;chartType&quot;:&quot;LINE&quot;,&quot;plotColor&quot;:{&quot;palette&quot;:&quot;fred&quot;,&quot;index&quot;:1},&quot;backgroundColor&quot;:{&quot;palette&quot;:&quot;fred&quot;,&quot;index&quot;:0},&quot;showGrid&quot;:true,&quot;shadeRecession&quot;:true,&quot;gridColor&quot;:{&quot;palette&quot;:&quot;fred&quot;,&quot;index&quot;:2},&quot;crossType&quot;:&quot;FULL_CROSS&quot;,&quot;crossColor&quot;:{&quot;palette&quot;:&quot;fred&quot;,&quot;index&quot;:3}}}" FRED_STATE="CHART" ORDER_ENTRY_EXPANDED="false" SYMBOL_GROUP="-1"/>
+        <FUNDAMENTALS ORDER_ENTRY_EXPANDED="false" SYMBOL_GROUP="-1">
+          <DEFAULT/>
+          <ETF/>
+          <FUTURES/>
+          <STOCK/>
+        </FUNDAMENTALS>
+        <FUTURES_TRADER COLUMN_COUNT="1" DEFAULT_TYPE="DASHBOARD" ORDER_ENTRY_EXPANDED="false" ROW_COUNT="1">
+          <CELL0 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="CHART" SIDEBAR_IS_ACTIVE="true" SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+            <ACTIVETRADER CELL_IDS="POSITION_BREAKDOWN;NET_POSITION;AVERAGE_PRICE;PL_OPEN;PL_DAY" COLUMNS="TRADE_AMOUNT:100:,BUY_ORDER:150:,BIDSIZE:60:,PRICE:100:,ASKSIZE:60:,SELL_ORDER:150:" ENABLED="true" SHOW_STUDY_MARKERS="false" SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0" ZOOMING_STEPS="1">
+              <POSITION_SUMMARY_PANEL CELL_IDS="POSITION_BREAKDOWN;NET_POSITION;AVERAGE_PRICE;PL_OPEN;PL_DAY" ENABLED="true"/>
+              <TRADE_BUTTONS_CONFIG CONFIGURATION_NAME="SINGLE" ORDER_RULES_SET="FUTURE" ORDER_TYPE="LIMIT" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" QTY="1.0" QTY_STEP="1.0" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY_WITH_BUTTONS;ORDER_TEMPLATE;AUTO_SEND;ORDER_SETUP">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_1>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL/>
+                  </TRG_1>
+                </_3>
+              </TRADE_BUTTONS_CONFIG>
+            </ACTIVETRADER>
+            <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <CHART CONFIGURATION="@v8@%0:com.devexperts.toschart.model,1:com.devexperts.tos.chartdata,2:com.devexperts.toschart.control.subgraph%owner{chartAggregationPeriods:ChartAggregationPeriodArray0{17::ChartAggregationPeriod0,13::ChartAggregationPeriod1},chartAggregationPeriods=@ChartAggregationPeriodArray0}#com.devexperts.toschart.core.ChartModel{encodedMixinsState=&quot;{\&quot;common\&quot;:{\&quot;DRAWING_SETS\&quot;:\&quot;{}\&quot;},\&quot;state_props\&quot;:{\&quot;state_type\&quot;:\&quot;REGULAR\&quot;},\&quot;monkey_bars_exp\&quot;:{\&quot;LikefolioMixin\&quot;:\&quot;{\\\&quot;paintingSettings\\\&quot;:{\\\&quot;neutralSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;positiveSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;negativeSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;sentimentSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true}},\\\&quot;shownDivisions\\\&quot;:[],\\\&quot;allDivisions\\\&quot;:[]}\&quot;},\&quot;monkey_bars\&quot;:{},\&quot;seasonality\&quot;:{},\&quot;regular\&quot;:{\&quot;DescriberMixin\&quot;:\&quot;{\\\&quot;visibility\\\&quot;:\\\&quot;HIDE_PANEL\\\&quot;,\\\&quot;studiesMode\\\&quot;:\\\&quot;HIDE_STUDIES\\\&quot;}\&quot;,\&quot;LikefolioMixin\&quot;:\&quot;{\\\&quot;paintingSettings\\\&quot;:{\\\&quot;neutralSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;positiveSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;negativeSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;sentimentSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true}},\\\&quot;shownDivisions\\\&quot;:[],\\\&quot;allDivisions\\\&quot;:[]}\&quot;}}&quot;,groupId=&quot;default&quot;,styleSettings{chartAggregationSettings{monkeyChartsAggSettings=!%0.TimeFrameAggregationSettings.createTickOrTimeAggregation(!%1.ChartRange.findByCode(&quot;DAY3&quot;),@ChartAggregationPeriod0),timeAggregationSettings=!%0.TimeFrameAggregationSettings.createTickOrTimeAggregation(!%1.ChartRange.findByCode(&quot;DAY5&quot;),@ChartAggregationPeriod1)},commonStyleSettings{manualAxisRegulator{maxValue=24.0158345d,minValue=21.8041655d},overlappedVolume=&lt;T,step=8.333333333333334d,suppressAutoZoom=&lt;T,visibleBarsCount=120}},subgraphModels{!get(#%2.SubgraphId(&quot;Symbol&quot;)){height=793},!get(#%2.SubgraphId(&quot;Volume&quot;)){height=80,storableIndicators.+(!com.devexperts.toschart.elstudies.CompiledStudy.resolveStudy(#com.devexperts.toschart.script.ScriptEssence{body=&quot;# @reference\n#\n# TD Ameritrade IP Company, Inc. (c) 2008-2020\n#\n\ndeclare real_size;\ndeclare on_volume;\ndeclare hide_on_intraday;\n\nplot Data = open_interest();&quot;,name=&quot;OpenInterest&quot;}))}}}" SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0"/>
+            <DASHBOARD SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <LEVEL_II SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <LIVE_NEWS SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+            <TIME_SALES SYMBOL="/CL:XNYM" SYMBOL_GROUP="-1" TIME_SALES_COLUMN="TIME:30:F:F,PRICE:20:,SIZE:20:" VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <TRADE CONFIGURATION_NAME="SINGLE" ORDER_RULES_SET="FUTURE" ORDER_TYPE="LIMIT" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" QTY="1.0" QTY_STEP="1.0" TEMPLATE="SINGLE" TRADE_BUTTONS="POSITION;WORKING_ORDERS;SECOND_LINE;ORDER_TEMPLATE;ORDER_SETUP" VISIBLE="true">
+              <OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+              </OCO_STOP>
+              <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                <OFFSET_PER_SYMBOL/>
+              </TRG_0>
+              <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                <OFFSET_PER_SYMBOL/>
+              </TRG_1>
+              <_2>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_1>
+              </_2>
+              <_3>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL/>
+                </TRG_1>
+              </_3>
+            </TRADE>
+          </CELL0>
+          <GROUPING_POS_STMT_SIZE_MODEL COMMON_COLUMN_RATIOS="0.3333333333333333;0.3333333333333333;0.3333333333333333" SECTION_RATIOS="0.15151515151515152;0.5252525252525253;0.32323232323232326">
+            <MIDDLE_COLUMN_RATIOS>
+              <ACCEPTOR_3CD77CBA48969437B3885A830F941EE2FD7B5BB0420F21BEBAEB4F46EAE7D4B0 RATIOS="0.15730337078651685;0.16853932584269662;0.2247191011235955;0.2247191011235955;0.2247191011235955"/>
+            </MIDDLE_COLUMN_RATIOS>
+          </GROUPING_POS_STMT_SIZE_MODEL>
+          <MODELNODE0 COMPOSITENAME="CELL0" NAME="0" TYPE="LEAF" WEIGHT="0.0"/>
+          <POSITION1 EXPANDED="true"/>
+          <POSITION_TABLE POSITION_TABLE="QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE"/>
+        </FUTURES_TRADER>
+        <GADGETS>
+          <SCRATCHPAD DOC="&lt;html id=&quot;scratchpad&quot;&gt;&lt;/html&gt;"/>
+        </GADGETS>
+        <GADGET_STACK_LAYOUT SCROLL_POSITION="141">
+          <GADGET0 EXPANDED="true" GADGET_NAME="Account Info" LOCKED="true">
+            <ACTIVE_ACCOUNT COMPONENTS="OPTION_BP,FX_BP,NET_LIQ,DTBP,DT_LEFT,UNSETTLED_CASH,CASH_AND_MONEY_MARKET_FUNDS,INTRADAY_LIQ_FUNDS,AVAILABLE_FUNDS_FOR_TRADING,FUTURES_VOLUME_MTD" ITEM_DISPLAY_MODE="HIDE_UNSED"/>
+          </GADGET0>
+          <GADGET1 EXPANDED="true" GADGET_NAME="Live News" HEIGHT="175" LOCKED="false">
+            <LIVE_NEWS SYMBOL_FILTER_WATCHLIST="0" SYMBOL_GROUP="-1">
+              <SORTING COLUMN="TIME" ORDER="-1"/>
+            </LIVE_NEWS>
+          </GADGET1>
+          <GADGET2 EXPANDED="true" GADGET_NAME="Trader TV" HEIGHT="229" LOCKED="false">
+            <LIVE_VIDEO/>
+            <TRADER_TV_VIDEO_PANEL STREAM_NAME="TDA_TV_STREAM" VOLUME_LEVEL="100"/>
+          </GADGET2>
+          <GADGET3 EXPANDED="true" GADGET_NAME="Watchlist" HEIGHT="153" LOCKED="false">
+            <SORTING/>
+            <WATCHLIST COLUMNS="SYMBOL:50:,LAST:46:,NET_CHANGE:51:,BID:43:,ASK:43:,&lt;arrow&gt;:11:F:F" COMPLEX_COLUMNS="" SYMBOL_GROUP="2" WATCH_LIST_ID="123049324"/>
+          </GADGET3>
+          <GADGET4 EXPANDED="true" GADGET_NAME="Quick Chart" HEIGHT="208" LOCKED="false">
+            <QUICK_CHART_GADGET>
+              <CHART CONFIGURATION="@v8@owner{chartAggregationPeriods:ChartAggregationPeriodArray0,chartAggregationPeriods=@ChartAggregationPeriodArray0}#com.devexperts.toschart.core.ChartModel{encodedMixinsState=&quot;{\&quot;common\&quot;:{\&quot;DRAWING_SETS\&quot;:\&quot;{}\&quot;},\&quot;state_props\&quot;:{\&quot;state_type\&quot;:\&quot;REGULAR\&quot;},\&quot;monkey_bars_exp\&quot;:{\&quot;LikefolioMixin\&quot;:\&quot;{\\\&quot;paintingSettings\\\&quot;:{\\\&quot;neutralSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;positiveSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;negativeSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;sentimentSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true}},\\\&quot;shownDivisions\\\&quot;:[],\\\&quot;allDivisions\\\&quot;:[]}\&quot;},\&quot;monkey_bars\&quot;:{},\&quot;seasonality\&quot;:{},\&quot;regular\&quot;:{\&quot;DescriberMixin\&quot;:\&quot;{\\\&quot;visibility\\\&quot;:\\\&quot;HIDE_PANEL\\\&quot;,\\\&quot;studiesMode\\\&quot;:\\\&quot;HIDE_STUDIES\\\&quot;}\&quot;,\&quot;LikefolioMixin\&quot;:\&quot;{\\\&quot;paintingSettings\\\&quot;:{\\\&quot;neutralSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;positiveSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;negativeSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;sentimentSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true}},\\\&quot;shownDivisions\\\&quot;:[],\\\&quot;allDivisions\\\&quot;:[]}\&quot;}}&quot;,groupId=&quot;default&quot;,styleSettings{commonStyleSettings{overlappedVolume=&lt;T,showBubbles=&lt;F,showExpFriday=&lt;F},otherStyleSettings.showCorpActions=&lt;F},subgraphModels.!get(#com.devexperts.toschart.control.subgraph.SubgraphId(&quot;Volume&quot;)){height=80}}" SYMBOL_GROUP="2"/>
+            </QUICK_CHART_GADGET>
+          </GADGET4>
+          <GADGET5 EXPANDED="true" GADGET_NAME="Market Depth" HEIGHT="175" LOCKED="false">
+            <REGIONAL_QUOTES_GADGET RQ_COLUMNS="EXCHANGE:20:,BID:20:,BID_SIZE:20:,ASK:20:,ASK_SIZE:20:,&lt;arrow&gt;:11:F:F">
+              <REGIONAL_QUOTES_GADGET RQ_COLUMNS="EXCHANGE:20:,BID:20:,BID_SIZE:20:,ASK:20:,ASK_SIZE:20:,&lt;arrow&gt;:11:F:F"/>
+            </REGIONAL_QUOTES_GADGET>
+          </GADGET5>
+        </GADGET_STACK_LAYOUT>
+        <HELP/>
+        <HELP_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="HELP"/>
+        <HOMESCREEN DIVIDER_LOCATION="978" ORDER_ENTRY_EXPANDED="false">
+          <TICKERTAPE WATCHLISTID="500"/>
+          <TRADER_TV_VIDEO_PANEL STREAM_NAME="TDA_TV_STREAM" VOLUME_LEVEL="100"/>
+          <WIDGET_DASHBOARD COLUMNS="2" ROWS="3">
+            <WIDGET_FRAME0 WIDGET_NAME="MARKET_OPENS_CLOSES_IN">
+              <WIDGET>
+                <OPENCLOSE EXCHANGEID="100"/>
+              </WIDGET>
+            </WIDGET_FRAME0>
+            <WIDGET_FRAME1 WIDGET_NAME="ORDERS">
+              <WIDGET VIEW="CHART"/>
+            </WIDGET_FRAME1>
+            <WIDGET_FRAME2 WIDGET_NAME="VIDEO">
+              <WIDGET/>
+            </WIDGET_FRAME2>
+            <WIDGET_FRAME3 WIDGET_NAME="PL_OPEN">
+              <WIDGET METRICS="PL_OPEN"/>
+            </WIDGET_FRAME3>
+            <WIDGET_FRAME4 WIDGET_NAME="WATCHLIST_HEAT_MAP">
+              <WIDGET/>
+            </WIDGET_FRAME4>
+            <WIDGET_FRAME5/>
+          </WIDGET_DASHBOARD>
+        </HOMESCREEN>
+        <INDIVIDUALS_COLUMN_MANAGER CUSTOM_OVERRIDES="" SYSTEM_OVERRIDES=""/>
+        <INVESTOOLS/>
+        <ISE_SPREADS/>
+        <LEARNING_CENTER/>
+        <MARKET_WATCH_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="QUOTES"/>
+        <MEDIA_PLAYER AUTO_STREAM_SWITCH="true" MUTED="false" VOLUME="0.3333333333333333"/>
+        <MERGEDALIKE_COLUMN_MANAGER CUSTOM_OVERRIDES="" SYSTEM_OVERRIDES=""/>
+        <MONITOR ORDER_ENTRY_EXPANDED="false">
+          <GROUPINGPOSITIONSORTINGMODEL/>
+          <MONITOR_CONTENT>
+            <FOREX/>
+            <FOREX1/>
+            <FOREX2 EXPANDED="true"/>
+            <GLOBAL_BETA_MODEL/>
+            <GROUPING_POSITION_LIST>
+              <EXPANDED/>
+            </GROUPING_POSITION_LIST>
+            <GROUPING_POS_STMT_SIZE_MODEL COMMON_COLUMN_RATIOS="0.3333333333333333;0.3333333333333333;0.3333333333333333" SECTION_RATIOS="0.15151515151515152;0.5252525252525253;0.32323232323232326">
+              <MIDDLE_COLUMN_RATIOS/>
+            </GROUPING_POS_STMT_SIZE_MODEL>
+            <GROUPING_POS_STMT_SIZE_MODEL1 COMMON_COLUMN_RATIOS="0.3333333333333333;0.3333333333333333;0.3333333333333333" SECTION_RATIOS="0.15151515151515152;0.5252525252525253;0.32323232323232326">
+              <MIDDLE_COLUMN_RATIOS>
+                <ACCEPTOR_F17C396C36A6BB4F1C424CE6F38A2F09D711E4EE9875EFCFCD829E447C25E2B3 RATIOS="0.18918918918918917;0.27027027027027023;0.27027027027027023;0.27027027027027045"/>
+              </MIDDLE_COLUMN_RATIOS>
+            </GROUPING_POS_STMT_SIZE_MODEL1>
+            <SYMBOL_SELECTOR SYMBOL_GROUP="-1"/>
+            <TRADEACTIVITYPANEL>
+              <CANCELLED_ORDERS EXPANDED="true"/>
+              <FILLED_ORDERS EXPANDED="true"/>
+              <ROLLING_STRATEGIES EXPANDED="false"/>
+              <SORTING/>
+              <SORTING1/>
+              <SORTING2/>
+              <SWITCH POSITION="0"/>
+              <SWITCH1 POSITION="0"/>
+              <SWITCH2 POSITION="0"/>
+              <SWITCH3 POSITION="0"/>
+              <WORKING_ORDERS EXPANDED="false"/>
+            </TRADEACTIVITYPANEL>
+          </MONITOR_CONTENT>
+        </MONITOR>
+        <OPTION_HACKER CRITERIA="WATCH:@60;EXCLUDE:;FILTER:DELTA::;FILTER:DAYS_TO_EXP::;SHOW:OPTIONS;SORT:SYMBOL;LIMIT:50;" INDICES_IL="SYMBOL:66:,DESCRIPTION:67:,LAST:67:,NET_CHANGE:66:,PERCENT_CHANGE:67:,VOLUME:66:,BID:67:,ASK:66:,HIGH:67:,LOW:66:,DELTA:52:,GAMMA:52:,THETA:52:,VEGA:52:,&lt;arrow&gt;:11:F:F" LIMITS="DELTA|N|N:DAYS_TO_EXP|N|N" ORDER_ENTRY_EXPANDED="false">
+          <ALL_COND_GROUP HEIGHT="78" HIDDEN="false"/>
+          <ANY_COND_GROUP HEIGHT="40" HIDDEN="false"/>
+          <NONE_COND_GROUP HEIGHT="40" HIDDEN="false"/>
+          <SETUP_SCAN EXPANDED="true"/>
+        </OPTION_HACKER>
+        <ORDERBOOKPANEL SELECTED_TAB="0"/>
+        <ORDERBOOK_STRATEGY_TABLE_SORTING/>
+        <ORDER_AND_STRATEGY_BOOK EXPANDED="true"/>
+        <ORDER_ENTRY_AND_ORDER_QUEUE>
+          <GROUP MARKER="SINGLE"/>
+        </ORDER_ENTRY_AND_ORDER_QUEUE>
+        <ORDER_ENTRY_AND_SAVED_ORDERS EXPANDED="false"/>
+        <PAIRS_TRADER/>
+        <POSITION_GROUP_MANAGER SYSTEM_POSITION_GROUPS="Equities and Equity Options:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Position:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Others:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Futures and Futures Options:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;None:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Small-Cap:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Mid-Cap:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Large-Cap:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Forex:QTY,TRADE_PRICE,MARK_PRICE,MARK_CHANGE;Micro-Cap:QTY,DAYS,TRADE_PRICE,MARK_PRICE,MARK_CHANGE"/>
+        <PRICE_CONTROL CONDITION="1" CONDITION_LOCKED="false" PRICE="0.0" UNLOCKED="false"/>
+        <PT_MESSAGE DISABLED="false"/>
+        <QUOTES/>
+        <ROLLING_STRATEGIES/>
+        <ROLLOVER/>
+        <SCANNER CRITERIA="WATCH:@51;EXCLUDE:;FILTER:NET_CHANGE::;FILTER:VOLUME::;FILTER:PERCENT_CHANGE::;SHOW:STOCKS;SORT:SYMBOL;LIMIT:50;" INDICES_IL="SYMBOL:66:,DESCRIPTION:200:,LAST:67:,NET_CHANGE:66:,PERCENT_CHANGE:67:,VOLUME:66:,BID:67:,ASK:66:,HIGH:67:,LOW:66:,NAME:52:,MARKET_CAP:67:,VOL_INDEX:81:,&lt;arrow&gt;:11:F:F" LIMITS="NET_CHANGE|N|N:VOLUME|N|N:PERCENT_CHANGE|N|N" ORDER_ENTRY_EXPANDED="false">
+          <ALL_COND_GROUP HEIGHT="118" HIDDEN="false"/>
+          <ANY_COND_GROUP HEIGHT="40" HIDDEN="false"/>
+          <NONE_COND_GROUP HEIGHT="40" HIDDEN="false"/>
+          <SETUP_SCAN EXPANDED="true"/>
+        </SCANNER>
+        <SCAN_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="Option Hacker"/>
+        <SCREEN_SHOW RECORDING_VOLUME="0.333333"/>
+        <SHARED_CONFIGS/>
+        <SORTING/>
+        <SORTING1/>
+        <SORTING2/>
+        <SORTING3/>
+        <SORTING4/>
+        <SORTING5/>
+        <SOUNDS/>
+        <SPREADS/>
+        <SPREAD_HACKER CRITERIA="SPREADWATCH:@51;FILTER:PROFIT_PROB::;FILTER:PROFIT_PROB::;FILTER:MAX_PROFIT::;SORT:-PROFIT_PROB;LIMIT:50;" ORDER_ENTRY_EXPANDED="false">
+          <ALL_COND_GROUP HEIGHT="118" HIDDEN="false"/>
+          <SETUP_SCAN EXPANDED="true"/>
+        </SPREAD_HACKER>
+        <SWITCH POSITION="0"/>
+        <SYSTEM/>
+        <THINK_BACK/>
+        <TOOLS_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="TRADE_FEEDS"/>
+        <TOS_CHARTS COLUMN_COUNT="1" DEFAULT_TYPE="CHART" ORDER_ENTRY_EXPANDED="false" ROW_COUNT="1">
+          <CELL0 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="CHART" SIDEBAR_IS_ACTIVE="true" SYMBOL="/ES:XCME" SYMBOL_GROUP="1" TRADE_BUTTONS_MIGRATED="true">
+            <ACTIVETRADER CELL_IDS="POSITION_BREAKDOWN;NET_POSITION;AVERAGE_PRICE;PL_OPEN;PL_DAY" COLUMNS="TRADE_AMOUNT:100:,BUY_ORDER:150:,BIDSIZE:60:,PRICE:100:,ASKSIZE:60:,SELL_ORDER:150:" ENABLED="true" SHOW_STUDY_MARKERS="false" SYMBOL="/ES:XCME" SYMBOL_GROUP="1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0" ZOOMING_STEPS="1">
+              <POSITION_SUMMARY_PANEL CELL_IDS="POSITION_BREAKDOWN;NET_POSITION;AVERAGE_PRICE;PL_OPEN;PL_DAY" ENABLED="true"/>
+              <TRADE_BUTTONS_CONFIG CONFIGURATION_NAME="SINGLE" ORDER_RULES_SET="FUTURE" ORDER_TYPE="LIMIT" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" QTY="1.0" QTY_STEP="1.0" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY_WITH_BUTTONS;ORDER_TEMPLATE;AUTO_SEND;ORDER_SETUP">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL C="10.0"/>
+                  </TRG_0>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="1.0"/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="-1.0"/>
+                </TRG_1>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL C="2.0"/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL C="-2.0"/>
+                  </TRG_1>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL C="3.0"/>
+                  </TRG_0>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                    <OFFSET_PER_SYMBOL C="-3.0"/>
+                  </TRG_1>
+                </_3>
+              </TRADE_BUTTONS_CONFIG>
+            </ACTIVETRADER>
+            <BIG_BUTTONS BIG_BUTTONS="AUTO_SEND;QUANTITY;BUY_MKT;SELL_MKT;CANCEL_ALL;REVERSE;FLAT" BIG_BUTTONS_TIF_AUTOSEND_MIGRATED="true" ORDER_RULES_SET="FUTURE" OS_AUTO="false" OS_TIF="DAY" QTY="1.0" QTY_STEP="1.0" VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <CHART CONFIGURATION="@v8@%0:com.devexperts.toschart.control.subgraph,1:com.devexperts.toschart.elstudies,2:com.devexperts.toschart.script%owner{chartAggregationPeriods:ChartAggregationPeriodArray0{9::ChartAggregationPeriod0},chartAggregationPeriods=@ChartAggregationPeriodArray0,colors{6::CustomColor0,5::CustomColor1,4::CustomColor2,3::CustomColor3}}#com.devexperts.toschart.core.ChartModel{encodedMixinsState=&quot;{\&quot;common\&quot;:{\&quot;DRAWING_SETS\&quot;:\&quot;{}\&quot;},\&quot;state_props\&quot;:{\&quot;state_type\&quot;:\&quot;REGULAR\&quot;},\&quot;monkey_bars_exp\&quot;:{\&quot;LikefolioMixin\&quot;:\&quot;{\\\&quot;paintingSettings\\\&quot;:{\\\&quot;neutralSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;positiveSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;negativeSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;sentimentSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true}},\\\&quot;shownDivisions\\\&quot;:[],\\\&quot;allDivisions\\\&quot;:[]}\&quot;},\&quot;monkey_bars\&quot;:{},\&quot;seasonality\&quot;:{},\&quot;regular\&quot;:{\&quot;DescriberMixin\&quot;:\&quot;{\\\&quot;visibility\\\&quot;:\\\&quot;HIDE_PANEL\\\&quot;,\\\&quot;studiesMode\\\&quot;:\\\&quot;HIDE_STUDIES\\\&quot;}\&quot;,\&quot;LikefolioMixin\&quot;:\&quot;{\\\&quot;paintingSettings\\\&quot;:{\\\&quot;neutralSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;positiveSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;negativeSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true},\\\&quot;sentimentSettings\\\&quot;:{\\\&quot;visible\\\&quot;:true}},\\\&quot;shownDivisions\\\&quot;:[],\\\&quot;allDivisions\\\&quot;:[]}\&quot;}}&quot;,groupId=&quot;default&quot;,styleSettings{chartAggregationSettings{priceAggregationSettings.timePeriod:ChartRange0,timeAggregationSettings=!com.devexperts.toschart.model.TimeFrameAggregationSettings.createTickOrTimeAggregation(@ChartRange0,@ChartAggregationPeriod0)},commonStyleSettings{colorSettings{monkeyProfileTypeColors.defaultRowHeight=&lt;F,mpExpandedTypeColors.defaultRowHeight=&lt;F},leftAxisRegulator{maxValue=3822.91666667d,minValue=0.0d},manualAxisRegulator{maxValue=3215.22687861d,minValue=3203.02312139d},overlappedVolume=&lt;T,shortCuts{^(&quot;Time Zone&quot;,&lt;F),^(&quot;Show Expiration Friday &quot;,&lt;F),^(&quot;Keep Price Zoom&quot;,&lt;F),^(&quot;enableLeftAxis&quot;,&lt;F),^(&quot;Fit expected price ranges&quot;,&lt;F),^(&quot;emphasizeDigitMPExpanded&quot;,&lt;F),^(&quot;showWicksCandleTrend&quot;,&lt;F),^(&quot;highlightEarnings&quot;,&lt;F),^(&quot;synchronizeCrosshair&quot;,&lt;F),^(&quot;myToolsMode&quot;,&lt;F),^(&quot;seasonalityStyle&quot;,&lt;F),^(&quot;Show Price Subgraph&quot;,&lt;F),^(&quot;closePriceLevel&quot;,&lt;F),^(&quot;Color Volume As Symbol Ticks&quot;,&lt;F),^(&quot;highlightPhantomRBars&quot;,&lt;F),^(&quot;Cross type &quot;,&lt;F),^(&quot;Fit Studies to Screen&quot;,&lt;F),^(&quot;Fit Orders&quot;,&lt;F),^(&quot;Bubbles as Percentage&quot;,&lt;F),^(&quot;hideStatusString&quot;,&lt;F),^(&quot;Show Studies &quot;,&lt;F),^(&quot;showWicksHeikinAshi&quot;,&lt;F),^(&quot;Alerts&quot;,&lt;F),^(&quot;Chart scale&quot;,&lt;F),^(&quot;Fit High/Low&quot;,&lt;F),^(&quot;Orders&quot;,&lt;F),^(&quot;Use Log Scale &quot;,&lt;F),^(&quot;Fit Study Markers to Screen&quot;,&lt;F),^(&quot;Fit Alerts&quot;,&lt;F),^(&quot;Fit patterns&quot;,&lt;F),^(&quot;Percentage View&quot;,&lt;F),^(&quot;Make Auto Zoom &quot;,&lt;F),^(&quot;Show Year Marking Line&quot;,&lt;F),^(&quot;Show Rollover Line&quot;,&lt;F),^(&quot;Show High/Low Bubbles &quot;,&lt;F),^(&quot;Snap mode&quot;,&lt;F),^(&quot;highlightStudies&quot;,&lt;F),^(&quot;Overlapped Volume&quot;,&lt;F),^(&quot;Show Symbol Logo&quot;,&lt;F),^(&quot;Show Last Price Bubble &quot;,&lt;F),^(&quot;emphasizeDigitMP&quot;,&lt;F),^(&quot;Show grid&quot;,&lt;F),^(&quot;showWicksCandle&quot;,&lt;F),^(&quot;Show trades&quot;,&lt;F),^(&quot;highlightSeasons&quot;,&lt;F),^(&quot;Extend Order/Alert Line to Left&quot;,&lt;F)},showTradeExecution=&lt;T,step=5.208333333333333d,suppressAutoZoom=&lt;T},forexStyleSettings{shortCuts.^(&quot;Show Volume Subgraph&quot;,&lt;F),showVolume=&lt;F},futuresStyleSettings{shortCuts{^(&quot;adjustForContractChanges&quot;,&lt;F),^(&quot;Show Open Interest&quot;,&lt;F),^(&quot;Show Trading Hours Only&quot;,&lt;F),^(&quot;showContractChangeEvents&quot;,&lt;F),^(&quot;futures_daily_close_price&quot;,&lt;F),^(&quot;Show Options&quot;,&lt;F),^(&quot;Show Volume Subgraph&quot;,&lt;F),^(&quot;Highlight Extended Hours&quot;,&lt;F),^(&quot;startAtMarketOpen&quot;,&lt;F)},showVolume=&lt;F},optionsStyleSettings{shortCuts{^(&quot;Show Open Interest&quot;,&lt;F),^(&quot;Show Trading Hours Only&quot;,&lt;F),^(&quot;Show Theo Price&quot;,&lt;F),^(&quot;Show Volume Subgraph&quot;,&lt;F),^(&quot;Highlight Extended Hours&quot;,&lt;F),^(&quot;startAtMarketOpen&quot;,&lt;F)},showVolume=&lt;F},otherStyleSettings{shortCuts{^(&quot;Show Social Sentiment&quot;,&lt;F),^(&quot;Show Trading Hours Only&quot;,&lt;F),^(&quot;Show Options&quot;,&lt;F),^(&quot;Show Volume Subgraph&quot;,&lt;F),^(&quot;Highlight Extended Hours&quot;,&lt;F),^(&quot;Show Corporate Actions&quot;,&lt;F),^(&quot;Show CNBC Video&quot;,&lt;F),^(&quot;startAtMarketOpen&quot;,&lt;F),^(&quot;adjustForDividends&quot;,&lt;F)},showLikefolio=&lt;T,showOptions=&lt;T,showVolume=&lt;F},setsIdentifiers.studySetName=&quot;Intraday&quot;},subgraphModels{!get(#%0.SubgraphId(&quot;Symbol&quot;)){height=583,storableIndicators{+(!%1.CompiledStudy.resolveStudy(#%2.ScriptEssence{body=&quot;# @reference\n#\n# TD Ameritrade IP Company, Inc. (c) 2017-2020\n#\n\ninput price = close;\ninput length = 9;\ninput displace = 0;\ninput showBreakoutSignals = no;\n\nplot SMA = Average(price[-displace], length);\nplot UpSignal = price crosses above SMA;\nplot DownSignal = price crosses below SMA;\n\nUpSignal.SetHiding(!showBreakoutSignals);\nDownSignal.SetHiding(!showBreakoutSignals);\n\nSMA.SetDefaultColor(GetColor(1));\nUpSignal.SetDefaultColor(Color.UPTICK);\nUpSignal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);\nDownSignal.SetDefaultColor(Color.DOWNTICK);\nDownSignal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);&quot;,name=&quot;SimpleMovingAvg&quot;}){inputsMap:TreeMap0{^(&quot;length&quot;,8),^(&quot;price&quot;,&quot;CLOSE&quot;)},inputsMap=@TreeMap0,plots{0:{color=@CustomColor0}}}),+(!%1.CompiledStudy.resolveStudy(#%2.ScriptEssence{body=&quot;# @reference\n#\n# TD Ameritrade IP Company, Inc. (c) 2017-2020\n#\n\ninput price = close;\ninput length = 9;\ninput displace = 0;\ninput showBreakoutSignals = no;\n\nplot SMA = Average(price[-displace], length);\nplot UpSignal = price crosses above SMA;\nplot DownSignal = price crosses below SMA;\n\nUpSignal.SetHiding(!showBreakoutSignals);\nDownSignal.SetHiding(!showBreakoutSignals);\n\nSMA.SetDefaultColor(GetColor(1));\nUpSignal.SetDefaultColor(Color.UPTICK);\nUpSignal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);\nDownSignal.SetDefaultColor(Color.DOWNTICK);\nDownSignal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);&quot;,name=&quot;SimpleMovingAvg&quot;}){inputsMap:TreeMap1{^(&quot;length&quot;,5),^(&quot;price&quot;,&quot;CLOSE&quot;)},inputsMap=@TreeMap1,plots{0:{color=@CustomColor1}}}),+(!%1.CompiledStudy.resolveStudy(#%2.ScriptEssence{body=&quot;# @reference\n#\n# TD Ameritrade IP Company, Inc. (c) 2017-2020\n#\n\ninput price = close;\ninput length = 9;\ninput displace = 0;\ninput showBreakoutSignals = no;\n\nplot SMA = Average(price[-displace], length);\nplot UpSignal = price crosses above SMA;\nplot DownSignal = price crosses below SMA;\n\nUpSignal.SetHiding(!showBreakoutSignals);\nDownSignal.SetHiding(!showBreakoutSignals);\n\nSMA.SetDefaultColor(GetColor(1));\nUpSignal.SetDefaultColor(Color.UPTICK);\nUpSignal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_UP);\nDownSignal.SetDefaultColor(Color.DOWNTICK);\nDownSignal.SetPaintingStrategy(PaintingStrategy.BOOLEAN_ARROW_DOWN);&quot;,name=&quot;SimpleMovingAvg&quot;}){inputsMap:TreeMap2{^(&quot;length&quot;,13),^(&quot;price&quot;,&quot;CLOSE&quot;)},inputsMap=@TreeMap2}),+(!%1.CompiledStudy.resolveStudy(#%2.ScriptEssence{body=&quot;# @new\n# @reference\n#\n# TD Ameritrade IP Company, Inc. (c) 2011-2020\n#\n\ninput numDevDn = -2.0;\ninput numDevUp = 2.0;\ninput timeFrame = {default DAY, WEEK, MONTH};\n\ndef cap = getAggregationPeriod();\ndef errorInAggregation =\n    timeFrame == timeFrame.DAY and cap &gt;= AggregationPeriod.WEEK or\n    timeFrame == timeFrame.WEEK and cap &gt;= AggregationPeriod.MONTH;\nassert(!errorInAggregation, \&quot;timeFrame should be not less than current chart aggregation period\&quot;);\n\ndef yyyyMmDd = getYyyyMmDd();\ndef periodIndx;\nswitch (timeFrame) {\ncase DAY:\n    periodIndx = yyyyMmDd;\ncase WEEK:\n    periodIndx = Floor((daysFromDate(first(yyyyMmDd)) + getDayOfWeek(first(yyyyMmDd))) / 7);\ncase MONTH:\n    periodIndx = roundDown(yyyyMmDd / 100, 0);\n}\ndef isPeriodRolled = compoundValue(1, periodIndx != periodIndx[1], yes);\n\ndef volumeSum;\ndef volumeVwapSum;\ndef volumeVwap2Sum;\n\nif (isPeriodRolled) {\n    volumeSum = volume;\n    volumeVwapSum = volume * vwap;\n    volumeVwap2Sum = volume * Sqr(vwap);\n} else {\n    volumeSum = compoundValue(1, volumeSum[1] + volume, volume);\n    volumeVwapSum = compoundValue(1, volumeVwapSum[1] + volume * vwap, volume * vwap);\n    volumeVwap2Sum = compoundValue(1, volumeVwap2Sum[1] + volume * Sqr(vwap), volume * Sqr(vwap));\n}\ndef price = volumeVwapSum / volumeSum;\ndef deviation = Sqrt(Max(volumeVwap2Sum / volumeSum - Sqr(price), 0));\n\nplot VWAP = price;\nplot UpperBand = price + numDevUp * deviation;\nplot LowerBand = price + numDevDn * deviation;\n\nVWAP.setDefaultColor(getColor(0));\nUpperBand.setDefaultColor(getColor(2));\nLowerBand.setDefaultColor(getColor(4));&quot;,name=&quot;VWAP&quot;}){plots{0:{color=@CustomColor2},1:{hiddenLast=&lt;T,hiding=&lt;T,titleHidden=&lt;T},2:{hiddenLast=&lt;T,hiding=&lt;T,titleHidden=&lt;T}}}),+(!%1.CompiledStudy.resolveStudy(#%2.ScriptEssence{body=&quot;input aggregationPeriod = AggregationPeriod.DAY;\r\ninput length = 1;\r\ninput displace = -1;\r\ninput showOnlyLastPeriod = no;\r\nplot PrevDayClose;\r\nif showOnlyLastPeriod and !IsNaN(close(period = aggregationPeriod)[-1]) { PrevDayClose = Double.NaN;\r\n} else { PrevDayClose = Highest(close(period = aggregationPeriod)[-displace], length);\r\n}\r\nPrevDayClose.SetDefaultColor(GetColor(9));\r\nPrevDayClose.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);&quot;,name=&quot;_71bd1353_9a74_4f89_b5ee_ebf87f4b6324&quot;}){plots{0:{color=@CustomColor3}}})}},!get(#%0.SubgraphId(&quot;Volume&quot;)){height=80},^(#%0.SubgraphId(&quot;Subgraph5&quot;),#%0.SubgraphStorableModel{height=234,storableIndicators.+(!%1.CompiledStudy.resolveStudy(#%2.ScriptEssence{body=&quot;# @reference\n#\n# TD Ameritrade IP Company, Inc. (c) 2007-2020\n#\n\ndeclare lower;\ndeclare zerobase;\n\ninput length = 50;\n\nplot Vol = volume;\nplot VolAvg = Average(volume, length);\n\nVol.SetPaintingStrategy(PaintingStrategy.HISTOGRAM);\nVol.SetLineWeight(3);\nVol.DefineColor(\&quot;Up\&quot;, Color.UPTICK);\nVol.DefineColor(\&quot;Down\&quot;, Color.DOWNTICK);\nVol.AssignValueColor(if close &gt; close[1] then Vol.color(\&quot;Up\&quot;) else if close &lt; close[1] then Vol.color(\&quot;Down\&quot;) else GetColor(1));\nVolAvg.SetDefaultColor(GetColor(8));&quot;,name=&quot;VolumeAvg&quot;}))})}}" SYMBOL="/ES:XCME" SYMBOL_GROUP="1" VERTICAL="false" VISIBLE="true" WEIGHT="3.0"/>
+            <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <LEVEL_II VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+            <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+            <TRADE CONFIGURATION_NAME="SINGLE" ORDER_RULES_SET="FUTURE" ORDER_TYPE="LIMIT" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" QTY="1.0" QTY_STEP="1.0" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+              <OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="10.0"/>
+                </TRG_0>
+              </OCO_STOP>
+              <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY">
+                <OFFSET_PER_SYMBOL C="1.0"/>
+              </TRG_0>
+              <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY">
+                <OFFSET_PER_SYMBOL C="-1.0"/>
+              </TRG_1>
+              <_2>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="2.0"/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="-2.0"/>
+                </TRG_1>
+              </_2>
+              <_3>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="3.0"/>
+                </TRG_0>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY">
+                  <OFFSET_PER_SYMBOL C="-3.0"/>
+                </TRG_1>
+              </_3>
+            </TRADE>
+          </CELL0>
+          <MODELNODE0 COMPOSITENAME="CELL0" NAME="0" TYPE="LEAF" WEIGHT="0.0"/>
+        </TOS_CHARTS>
+        <TRADE ORDER_ENTRY_EXPANDED="true" SYMBOL_GROUP="1">
+          <DROPDOWN EXPANDED="false"/>
+          <FUTURES EXPANDED="true"/>
+          <GROUPING_POS_STMT_SIZE_MODEL COMMON_COLUMN_RATIOS="0.3333333333333333;0.3333333333333333;0.3333333333333333" SECTION_RATIOS="0.15151515151515152;0.5252525252525253;0.32323232323232326"/>
+          <OPTIONS_CHART_PANEL DELTA_SUBGRAPH="false" HIGHLIGHT_TICKS="false" LOCK_TIME_AXIS="false" PALETTE="ff66ff,ffff,ff7e9c,b5b5b5,e7be00,ff5f5f,c531,797979,f9e9a7,ffffff,ff7e00,c0bfff,f6bcb3,74bde8,ea88ff,8fefbf" PERCENT_AXIS="false" PRODUCT_DEPTH_MODE="OPTIONS">
+            <COMBO_CHECK_BOX COLORS="" SELECTION=""/>
+            <FUTURES_CURVES CURVES_COUNT="0"/>
+            <OPTIONS_CHART_CONTROLS STRIKE_COUNT="All" VALUE="IMPL_VOL" VALUE2="IMPL_VOL" VIEW="ALL"/>
+          </OPTIONS_CHART_PANEL>
+          <OPTIONS_STATISTIC EXPANDED="false"/>
+          <OPTIONS_TIME_AND_SALES ALL_CONDITIONS="true" ALL_EXCHANGES="true" ALL_PRICE="true" ALL_QUANTITIES="true" ALL_SERIES="true" ALL_STRIKES="true" EXPANDED="false" SELECTED_CONDITIONS="" SELECTED_EXCHANGES="" SELECTED_SERIES="" SELECTED_SIDE="BOTH"/>
+          <OPTION_CHAIN EXPANDED="true"/>
+          <PRODUCT_DEPTH EXPANDED="false"/>
+          <QSHEETPANEL QSHEET_CONFIGURATION_COLUMNS="LASTX,NET_CHANGE" STRIKE_QTY="ALL">
+            <ALLPRODUCTSPANELSMODEL>
+              <OPTION_CHAIN ORDERING="2" SWITCHED_ON="true"/>
+              <OPTION_STATISTICS ORDERING="3" SWITCHED_ON="true"/>
+              <OPTION_TIME_AND_SALES ORDERING="4" SWITCHED_ON="true"/>
+              <TRADE_GRID ORDERING="1" SWITCHED_ON="true"/>
+              <UNDERLYING ORDERING="0" SWITCHED_ON="true"/>
+              <WIDGET_360 ORDERING="5" SWITCHED_ON="true"/>
+            </ALLPRODUCTSPANELSMODEL>
+            <OPTIONSLISTPANEL EXPANDED="2020-07-24+100 (Weeklys)"/>
+            <OPTIONS_SELECT TEMPLATE_FILTER_NAME="Single">
+              <FUTURES_FILTER_NAME ALL_DELIVERABLES="true" ALL_EXCHANGES="true" ALL_EXPIRATION_DAYS="true" ALL_EXPIRATION_TYPES="true" ALL_SIDES="true" ALL_STRIKES="true" SELECTED_DELIVERABLES="REGULAR" SELECTED_EXCHANGES="COMPOSITE" SELECTED_EXPIRATION_TYPES="REGULAR" SELECTED_SIDE="BOTH" THEO_ADJ_TYPE="DOLLAR" THEO_DATE="18460" THEO_VOL_ADJ="0.0">
+                <THEO_ADJ_VALUES_NAME DOLLAR="0.0" PERCENT="0.0" SIGMA="0.0"/>
+              </FUTURES_FILTER_NAME>
+              <STOCK_FILTER_NAME ALL_DELIVERABLES="true" ALL_EXCHANGES="true" ALL_EXPIRATION_DAYS="true" ALL_EXPIRATION_TYPES="true" ALL_SIDES="true" ALL_STRIKES="true" SELECTED_DELIVERABLES="REGULAR" SELECTED_EXCHANGES="COMPOSITE" SELECTED_EXPIRATION_TYPES="REGULAR" SELECTED_SIDE="BOTH" THEO_ADJ_TYPE="DOLLAR" THEO_DATE="18460" THEO_VOL_ADJ="0.0">
+                <THEO_ADJ_VALUES_NAME DOLLAR="0.0" PERCENT="0.0" SIGMA="0.0"/>
+              </STOCK_FILTER_NAME>
+            </OPTIONS_SELECT>
+          </QSHEETPANEL>
+          <SORTING6 COLUMN="EXPIRATION" ORDER="1"/>
+          <TRADE_GRID COLUMN_COUNT="3" DEFAULT_TYPE="LEVEL_II" EXPANDED="false" ROW_COUNT="1">
+            <CELL0 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="LEVEL_II" SIDEBAR_IS_ACTIVE="true" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+              <ACTIVETRADER VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <CHART VERTICAL="false" VISIBLE="false" WEIGHT="3.0"/>
+              <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <LEVEL_II SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0">
+                <SORTING COLUMN="BID" ORDER="-1"/>
+                <SORTING1 COLUMN="ASK" ORDER="1"/>
+              </LEVEL_II>
+              <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <TRADE CONFIGURATION_NAME="SINGLE" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY"/>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY"/>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY"/>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY"/>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY"/>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY"/>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY"/>
+                </_3>
+              </TRADE>
+            </CELL0>
+            <CELL1 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="LEVEL_II" SIDEBAR_IS_ACTIVE="true" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+              <ACTIVETRADER VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <CHART VERTICAL="false" VISIBLE="false" WEIGHT="3.0"/>
+              <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <LEVEL_II SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0">
+                <SORTING COLUMN="BID" ORDER="-1"/>
+                <SORTING1 COLUMN="ASK" ORDER="1"/>
+              </LEVEL_II>
+              <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <TRADE CONFIGURATION_NAME="SINGLE" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY"/>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY"/>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY"/>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY"/>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY"/>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY"/>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY"/>
+                </_3>
+              </TRADE>
+            </CELL1>
+            <CELL2 ROWSPANELWEIGHT="1.0" ROWWEIGHT0="1.0" ROWWEIGHT1="1.0" SELECTED_TYPE="LEVEL_II" SIDEBAR_IS_ACTIVE="true" SYMBOL_GROUP="-1" TRADE_BUTTONS_MIGRATED="true">
+              <ACTIVETRADER VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <BIG_BUTTONS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <CHART VERTICAL="false" VISIBLE="false" WEIGHT="3.0"/>
+              <DASHBOARD VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <LEVEL_II SYMBOL_GROUP="-1" VERTICAL="false" VISIBLE="true" WEIGHT="1.0">
+                <SORTING COLUMN="BID" ORDER="-1"/>
+                <SORTING1 COLUMN="ASK" ORDER="1"/>
+              </LEVEL_II>
+              <LIVE_NEWS VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <PHASE_SCORES VERTICAL="false" VISIBLE="false" WEIGHT="2.0"/>
+              <TIME_SALES VERTICAL="false" VISIBLE="false" WEIGHT="1.0"/>
+              <TRADE CONFIGURATION_NAME="SINGLE" OS_AUTO="false" OS_EXPANDED="false" OS_TIF="DAY" TEMPLATE="SINGLE" TRADE_BUTTONS="BUY_MKT;SELL_MKT;MULTI_CANCEL;REVERSE;FLAT;SECOND_LINE;QUANTITY;AUTO_SEND;ORDER_SETUP" VISIBLE="false">
+                <OCO_STOP>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="ASK_BID" TRG_OFFSET_MODE="TICK" TRG_OT="STOP" TRG_SETUP="10.0" TRG_TIF="DAY"/>
+                </OCO_STOP>
+                <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="1.0" TRG_TIF="DAY"/>
+                <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-1.0" TRG_TIF="DAY"/>
+                <_2>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="2.0" TRG_TIF="DAY"/>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-2.0" TRG_TIF="DAY"/>
+                </_2>
+                <_3>
+                  <TRG_0 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="LIMIT" TRG_SETUP="3.0" TRG_TIF="DAY"/>
+                  <TRG_1 TRG_ENBL="true" TRG_LINK="TRG" TRG_OFFSET_MODE="ABSOLUTE" TRG_OT="STOP" TRG_SETUP="-3.0" TRG_TIF="DAY"/>
+                </_3>
+              </TRADE>
+            </CELL2>
+            <MODELNODE0 COUNT="3" ROWLAYOUT="true" TYPE="SPLIT" WEIGHT="0.0">
+              <MODELNODE0 COMPOSITENAME="CELL0" NAME="0" TYPE="LEAF" WEIGHT="0.3333333333333333"/>
+              <MODELNODE1 COMPOSITENAME="CELL1" NAME="1" TYPE="LEAF" WEIGHT="0.3333333333333333"/>
+              <MODELNODE2 COMPOSITENAME="CELL2" NAME="2" TYPE="LEAF" WEIGHT="0.3333333333333333"/>
+            </MODELNODE0>
+          </TRADE_GRID>
+          <UNDERLYING1 EXPANDED="true"/>
+          <UNDERLYING_PANEL FUTURES_DISPLAYING_MODE="ALL"/>
+        </TRADE>
+        <TRADER_INTERFACE/>
+        <TRADER_LOG/>
+        <TRADE_FEEDS/>
+        <TRADE_GROUP ORDER_ENTRY_EXPANDED="false" SELECTED_LAYOUT="FUTURES_TRADER"/>
+        <VIDEOS/>
+        <VISUALIZE/>
+        <VOICE_CHAT PLAYBACK_LAST_VOLUME_BEFORE_MUTED="1.0" PLAYBACK_VOLUME="1.0" RECORDING_LAST_VOLUME_BEFORE_MUTED="1.0" RECORDING_VOLUME="1.0"/>
+        <VOLATILITY_ANALYSIS/>
+      </DESKTOP>
+      <DESKTOP_ROOT/>
+      <LINES LEVEL="Beginner" RAPID="false"/>
+      <MESSAGE_CENTER_LAYOUT>
+        <SORTING COLUMN="TIME" ORDER="1"/>
+      </MESSAGE_CENTER_LAYOUT>
+      <MINESWEEPER BOMBS="10" COLUMNS="9" LEVEL="Beginner" QMARK="false" ROWS="9"/>
+      <TETRIS LEVEL="Beginner" ROTATE="false"/>
+    </DETACHED_FRAME_0>
+  </WORKSPACE>
+</PREFERENCES>
