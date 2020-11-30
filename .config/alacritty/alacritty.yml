@@ -34,9 +34,6 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: full
 
-# Display tabs using this many cells (changes require restart)
-tabspaces: 4
-
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
 
@@ -48,18 +45,6 @@ scrolling:
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
   multiplier: 3
-
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
 
 # Font configuration (changes require restart)
 font:
@@ -79,7 +64,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 9
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -213,7 +198,7 @@ schemes:
       cyan:    '#56b6c2'
       white:   '#ffffff'
 
-colors: *onedark
+colors: *dark
 
 # Visual Bell
 #
@@ -237,9 +222,6 @@ colors: *onedark
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
 
 # Background opacity
 background_opacity: 1.0
@@ -295,7 +277,7 @@ selection:
   # clipboard.
   save_to_clipboard: true
 
-dynamic_title: true
+window.dynamic_title: true
 
 cursor:
   # Cursor style
@@ -312,7 +294,7 @@ live_config_reload: true
 
 # Shell
 shell:
-  program: /usr/local/bin/zsh
+  program: /usr/bin/zsh
   args:
     - --login
 # Key bindings
