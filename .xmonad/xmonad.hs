@@ -20,6 +20,8 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Grid (Grid(..))
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.Decoration
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.MultiToggle.Instances
 import XMonad.Actions.Minimize
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
@@ -33,7 +35,7 @@ myTerminal = "alacritty"
 
 -- Use windows key instead of alt
 myModMask    = mod4Mask
-myWorkspaces = ["docs", "dev", "web", "b", "c", "d", "e", "f", "g"]
+myWorkspaces = ["docs", "dev", "web", "school", "I", "II", "III", "IV", "V"]
 
 -- Custom keybindings + the default ones
 myKeys (XConfig {modMask = modm}) = M.fromList $
@@ -54,11 +56,23 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
         , ((0, 0x1008ff12), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
         , ((0, 0x1008ff14), spawn "playerctl play-pause")
         , ((0, 0x1008ff16), spawn "playerctl previous")
-        , ((0, 0x1008ff17), spawn "playerctl next")]
+        , ((0, 0x1008ff17), spawn "playerctl next")
+
+        -- Screenshots with scrot
+        , ((modm, xK_Print), spawn "sleep 0.5 && scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png -d 1")
+        , ((modm .|. shiftMask, xK_Print), spawn "sleep 0.5 && scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png -s")
+
+        -- Minimize + maximize via mod + n
+        , ((modm, xK_n), sequence_ [withFocused minimizeWindow, spawn "echo temp\n >> ~/.xmonad/temp"])
+        , ((modm .|. shiftMask, xK_n), sequence_ [withLastMinimized maximizeWindow, spawn "sed -i.bak 'ld' ~/.xmonad/temp"])
+
+        -- Make window fullscreen with mod + f
+        , ((modm, xK_f), sendMessage $ Toggle FULL)]
 
 -- Border width
-myBorderWidth = 1
+myBorderWidth = 2
 
+-- Purple is a nice color
 myFocusedBorderColor = "#bb8aff"
 
 -- Gaps between windows
@@ -70,13 +84,17 @@ mySpacing = spacingRaw True
 
 -- Layouts available via mod + space
 myLayoutHook =
-        avoidStruts $ smartBorders $ mySpacing $ 
-        Tall 1 (10/100) (60/100)
-        ||| Grid
+        avoidStruts $
+        smartBorders $
+        mySpacing $
+        minimize $
+        mkToggle (NOBORDERS ?? FULL ?? EOT) $
+                Tall 1 (10/100) (60/100)
+                ||| Grid
 
 -- Start polybar when xmonad starts
 myStartupHook = do
-        spawnOnce "$HOME/.config/polybar/launch.sh"
+        spawn "$HOME/.config/polybar/launch.sh"
 
 main = do
         -- Don't override the default configuration--extend it
