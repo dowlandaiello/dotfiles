@@ -1,0 +1,14 @@
+#---------------------------------------------
+#
+# File: ~/.xmonad/stack.yaml
+# Author: Dowland Aiello
+# Notes: This is the stack config for the
+# package containing my personal xmonad
+# configuration. Enjoy! :D
+#
+#---------------------------------------------
+resolver: lts-16.4
+
+packages:
+- xmonad-git
+- xmonad-contrib-git
