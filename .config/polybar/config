@@ -1,8 +1,8 @@
 [colors]
-background = #222
+background = #000
 background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #555
+foreground = #e0e0e0
+foreground-alt = #d0d0d0
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -398,10 +398,10 @@ enable-click = true
 enable-scroll = true
 
 label-active = " %name% "
-label-active-underline = #fba922
+label-active-underline = #ff00ae
 
 label-occupied = " %name% "
-label-occupied-foreground = #ffaa00
+label-occupied-foreground = #ff00ae
 
 label-urgent = " %name% "
 label-urgent-underline = #9b0a20

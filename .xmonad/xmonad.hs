@@ -70,7 +70,7 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
         , ((modm, xK_f), sendMessage $ Toggle FULL)]
 
 -- Border width
-myBorderWidth = 2
+myBorderWidth = 1
 
 -- Purple is a nice color
 myFocusedBorderColor = "#bb8aff"
