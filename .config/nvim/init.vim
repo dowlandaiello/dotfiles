@@ -23,6 +23,7 @@ Plug 'tbastos/vim-lua'
 Plug 'dense-analysis/ale'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'rhysd/vim-grammarous'
 Plug 'preservim/nerdtree'
 Plug 'psf/black'
@@ -82,6 +83,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-z> :wa<CR><C-z>
 
 " <3 fzf
 let g:fzf_command_prefix = 'Fzf'
@@ -114,6 +116,9 @@ let g:ale_linters = {'javascript': ['eslint'], 'typescriptreact': ['eslint'], 'v
 let g:ale_fixers = {'javascript': ['eslint'], 'typescriptreact': ['eslint'], 'vue': ['eslint'], 'python': ['black']}
 let g:ale_fix_on_save = 1
 
+" IDE Features with CoC
+let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-tailwindcss']
+
 " Syntax for dart
 let g:dart_style_guide = 1
 let g:dart_format_on_save = 1
@@ -128,7 +133,7 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.js  setlocal noexpandtab shiftwidth=2 tabstop=2
   autocmd BufNewFile,BufRead *.sol setlocal noexpandtab  shiftwidth=4 tabstop=4
 
-  autocmd FileType rust       		setlocal noexpandtab  shiftwidth=4 tabstop=4
+  autocmd FileType rust       		setlocal expandtab    shiftwidth=4 tabstop=4
   autocmd FileType vue        		setlocal noexpandtab  shiftwidth=2 tabstop=2
   autocmd FileType json       		setlocal noexpandtab  shiftwidth=2 tabstop=2
   autocmd FileType go         		setlocal noexpandtab  shiftwidth=4 tabstop=4
