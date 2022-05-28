@@ -10,10 +10,13 @@
 --
 -- Enjoy!
 -------------------------------------------------------------------
+{-# LANGUAGE DeriveDataTypeable #-}
 
 import XMonad
 import XMonad.Util.Types
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Paste
+import XMonad.Util.ExtensibleState as XS
 import XMonad.Layout.Minimize
 import XMonad.Layout.Gaps
 import XMonad.Layout.Spacing
@@ -29,6 +32,13 @@ import qualified XMonad.StackSet as Windows
 import XMonad.Config.Desktop (desktopLayoutModifiers, desktopConfig)
 
 import qualified Data.Map as M
+import qualified Data.Bool as B
+
+-- Whether caps or esc is used for esc should be toggleable
+newtype XCapState = XCapState { xcapstate :: Bool } deriving Typeable
+
+instance ExtensionClass XCapState where
+        initialValue = XCapState False
 
 -- Use alacritty as the default terminal
 myTerminal = "alacritty"
@@ -45,9 +55,16 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
         , ((modm .|. mod1Mask, xK_q), spawnOnce "$HOME/.config/polybar/launch.sh")
 
         -- Keybindings for rofi
-        , ((controlMask, xK_space), spawn "rofi -show window")
         , ((controlMask .|. shiftMask, xK_space), spawn "rofi -show run")
         , ((controlMask .|. shiftMask, xK_2), spawn "rofi -show ssh")
+        , ((controlMask .|. shiftMask, xK_1), spawn "rofi -show window")
+
+        -- Swap esc and caps when cmd + shift + V
+        , ((modm .|. shiftMask, xK_v), do
+                locked <- fmap xcapstate XS.get 
+                B.bool (spawn "setxkbmap -option caps:swapescape") (spawn "setxkbmap -option") locked
+                XS.put $ XCapState (not locked)
+          )
 
         -- Media controls
         -- XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute, XFAudioPlay, XFAudioPrev, XFAudioNext
@@ -66,11 +83,15 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
         , ((modm, xK_n), sequence_ [withFocused minimizeWindow, spawn "echo temp\n >> ~/.xmonad/temp"])
         , ((modm .|. shiftMask, xK_n), sequence_ [withLastMinimized maximizeWindow, spawn "sed -i.bak 'ld' ~/.xmonad/temp"])
 
+        -- Change screen brightness with F11 and F12
+        , ((0, 0x1008ff02), spawn "xrandr --output eDP-1 --brightness 1")
+        , ((0, 0x1008ff03), spawn "xrandr --output eDP-1 --brightness 0.25")
+
         -- Make window fullscreen with mod + f
         , ((modm, xK_f), sendMessage $ Toggle FULL)]
 
 -- Border width
-myBorderWidth = 1
+myBorderWidth = 2
 
 -- Purple is a nice color
 myFocusedBorderColor = "#bb8aff"
