@@ -28,6 +28,7 @@ import XMonad.Layout.MultiToggle.Instances
 import XMonad.Actions.Minimize
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.WindowSwallowing
 import qualified XMonad.StackSet as Windows
 import XMonad.Config.Desktop (desktopLayoutModifiers, desktopConfig)
 
@@ -98,9 +99,9 @@ myFocusedBorderColor = "#bb8aff"
 
 -- Gaps between windows
 mySpacing = spacingRaw True
-        (Border 5 5 5 5)
+        (Border 10 10 10 10)
         True
-        (Border 5 5 5 5)
+        (Border 10 10 10 10)
         True
 
 -- Layouts available via mod + space
@@ -117,9 +118,12 @@ myLayoutHook =
 myStartupHook = do
         spawn "$HOME/.config/polybar/launch.sh"
 
+-- Swallow alacritty windows (replace with whatever's running)
+myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
+
 main = do
         -- Don't override the default configuration--extend it
-        xmonad $ ewmh desktopConfig
+        xmonad $ ewmhFullscreen . ewmh $ def
                 { modMask            = myModMask
                 , terminal           = myTerminal
                 , workspaces         = myWorkspaces
@@ -127,6 +131,6 @@ main = do
                 , borderWidth        = myBorderWidth
                 , layoutHook         = desktopLayoutModifiers $ myLayoutHook
                 , startupHook        = myStartupHook
-                , handleEventHook    = fullscreenEventHook <+> handleEventHook desktopConfig
+                , handleEventHook    = myHandleEventHook <+> handleEventHook desktopConfig
                 , keys               = \c -> myKeys c `M.union` keys def c
                 }
