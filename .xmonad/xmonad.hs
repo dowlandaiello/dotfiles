@@ -123,7 +123,7 @@ myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
 main = do
         -- Don't override the default configuration--extend it
-        xmonad $ ewmhFullscreen . ewmh $ def
+        xmonad $ docks $ ewmhFullscreen . ewmh $ def
                 { modMask            = myModMask
                 , terminal           = myTerminal
                 , workspaces         = myWorkspaces
