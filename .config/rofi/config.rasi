@@ -1,3 +1,20 @@
 configuration {
-  theme: "purple";
+  font: "JetBrainsMono Nerd Font 24";
+}
+
+@theme "purple"
+
+window {
+  border-color: #ed60ba;
+  background-color: #27212e;
+  border: 2;
+  padding: 1%;
+}
+
+element, element-text {
+  background-color: #27212e;
+}
+
+element selected, element-text selected {
+  background-color: #ed60ba;
 }

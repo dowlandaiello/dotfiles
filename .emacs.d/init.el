@@ -56,11 +56,13 @@
   :config
   (setq doom-themes-enable-bold t
     doom-themes-enable-italic t)
-  (load-theme 'doom-gruvbox t)
+  (load-theme 'doom-laserwave t)
   (doom-themes-visual-bell-config))
 (use-package doom-modeline
   :ensure t
-  :init (doom-modeline-mode 1))
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 40))
 (use-package all-the-icons
   :ensure t
   :if (display-graphic-p))
@@ -69,8 +71,30 @@
 (use-package tree-sitter-langs
   :ensure t
   :config
-  (tree-sitter-require 'rust))
+  (tree-sitter-require 'rust)
+  (tree-sitter-require 'json)
+  (tree-sitter-require 'html)
+  (tree-sitter-require 'tsx)
+  (tree-sitter-require 'python)
+  (tree-sitter-require 'go)
+  (tree-sitter-require 'c)
+  (tree-sitter-require 'bash)
+  (tree-sitter-require 'css)
+  (tree-sitter-require 'javascript)
+  (tree-sitter-require 'java)
+  (tree-sitter-require 'typescript))
 (use-package whitespace
+  :ensure t)
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+(use-package which-key
+  :ensure t
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.3))
+(use-package org
   :ensure t)
 
 ;; Modes
@@ -78,6 +102,10 @@
   :ensure t
   :init
   (autoload 'rust-mode "rust-mode" nil t))
+(use-package haskell-mode
+  :ensure t)
+(use-package yaml-mode
+  :ensure t)
 
 ;; No home page
 (setq inhibit-startup-message t)
@@ -97,6 +125,9 @@
 ;; - font
 (set-fringe-mode 10)
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 80)
+(window-divider-mode +1)
+(setq window-divider-default-right-width 4 window-divider-default-bottom-width 4)
+
 
 ;; Mode-specific configs
 ;; Specifically, blocking tabs in certain modes, and prefering them over spaces
@@ -110,17 +141,25 @@
   (setq tab-width custom-tab-width))
 
 (setq auto-mode-alist
-      (append '(("\\.rs\\'" . rust-mode)) auto-mode-alist))
+      (append
+       '(("\\.rs\\'" . rust-mode) ("\\.rasi\\'" . prog-mode)) auto-mode-alist))
 (add-hook 'prog-mode-hook (lambda ()
                             (whitespace-mode)
                             (line-number-mode)
+                            (column-number-mode)
                             (enable-tabs)
                             (setq display-line-numbers 'relative)
-                            (setq whitespace-style '(face tabs tab-mark trailing))))
+                            (setq whitespace-style '(face tabs tab-mark trailing))
+                            (setq whitespace-display-mappings
+                                  '((tab-mark 9 [124 9] [92 9])))))
 (add-hook 'rust-mode-hook (lambda ()
-                            (tree-sitter-hl-mode)))
+                            (tree-sitter-hl-mode)
+                            (disable-tabs)))
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
+
+;; Custom controls
+(delete-selection-mode 1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -128,7 +167,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
+   '(yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

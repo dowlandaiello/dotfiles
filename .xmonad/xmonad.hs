@@ -46,7 +46,7 @@ myTerminal = "alacritty"
 
 -- Use windows key instead of alt
 myModMask    = mod4Mask
-myWorkspaces = ["docs", "dev", "web", "school", "I", "II", "III", "IV", "V"]
+myWorkspaces = ["docs", "dev", "web", "misc", "I", "II", "III", "IV", "V"]
 
 -- Custom keybindings + the default ones
 myKeys (XConfig {modMask = modm}) = M.fromList $
@@ -94,20 +94,20 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
 -- Border width
 myBorderWidth = 2
 
--- Purple is a nice color
-myFocusedBorderColor = "#bb8aff"
+-- Active vs inactive
+myFocusedBorderColor = "#ed60ba"
+myInactiveBorderColor = "#1b1720"
 
 -- Gaps between windows
-mySpacing = spacingRaw True
-        (Border 10 10 10 10)
+mySpacing = spacingRaw False
+        (Border 80 80 80 80)
         True
-        (Border 10 10 10 10)
+        (Border 20 20 20 20)
         True
 
 -- Layouts available via mod + space
 myLayoutHook =
         avoidStruts $
-        smartBorders $
         mySpacing $
         minimize $
         mkToggle (NOBORDERS ?? FULL ?? EOT) $
@@ -124,13 +124,14 @@ myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 main = do
         -- Don't override the default configuration--extend it
         xmonad $ docks $ ewmhFullscreen . ewmh $ def
-                { modMask            = myModMask
-                , terminal           = myTerminal
-                , workspaces         = myWorkspaces
-                , focusedBorderColor = myFocusedBorderColor
-                , borderWidth        = myBorderWidth
-                , layoutHook         = desktopLayoutModifiers $ myLayoutHook
-                , startupHook        = myStartupHook
-                , handleEventHook    = myHandleEventHook <+> handleEventHook desktopConfig
-                , keys               = \c -> myKeys c `M.union` keys def c
+                { modMask             = myModMask
+                , terminal            = myTerminal
+                , workspaces          = myWorkspaces
+                , normalBorderColor   = myInactiveBorderColor
+                , focusedBorderColor  = myFocusedBorderColor
+                , borderWidth         = myBorderWidth
+                , layoutHook          = desktopLayoutModifiers $ myLayoutHook
+                , startupHook         = myStartupHook
+                , handleEventHook     = myHandleEventHook <+> handleEventHook desktopConfig
+                , keys                = \c -> myKeys c `M.union` keys def c
                 }
