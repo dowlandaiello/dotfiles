@@ -198,7 +198,42 @@ schemes:
       cyan:    '#56b6c2'
       white:   '#ffffff'
 
-colors: *dark
+# Base16 Bright - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+colors:
+  # Default colors
+  primary:
+    background: '#27212e'
+    foreground: '#FFFFFF'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '#ed60ba'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xfb0120'
+    green:   '0xa1c659'
+    yellow:  '0xfda331'
+    blue:    '0x6fb3d2'
+    magenta: '0xd381c3'
+    cyan:    '0x76c7b7'
+    white:   '0xe0e0e0'
+
+  # Bright colors
+  bright:
+    black:   '0xb0b0b0'
+    red:     '0xfc6d24'
+    green:   '0x303030'
+    yellow:  '0x505050'
+    blue:    '0xd0d0d0'
+    magenta: '0xf5f5f5'
+    cyan:    '0xbe643c'
+    white:   '0xffffff'
+
+draw_bold_text_with_bright_colors: false
 
 # Visual Bell
 #
@@ -222,9 +257,6 @@ colors: *dark
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-
-# Background opacity
-background_opacity: 1.0
 
 # Mouse bindings
 #
@@ -255,19 +287,6 @@ mouse:
 
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
-
-  url:
-    # URL launcher
-    #
-    # This program is executed when clicking on a text which is recognized as a URL.
-    # The URL is always added to the command as the last parameter.
-    launcher: open
-
-    # URL modifiers
-    #
-    # These are the modifiers that need to be held down for opening URLs when clicking
-    # on them. The available modifiers are documented in the key binding section.
-    #modifiers: Control|Shift
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
