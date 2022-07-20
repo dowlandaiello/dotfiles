@@ -107,6 +107,16 @@
   (setq which-key-idle-delay 0.3))
 (use-package org
   :ensure t)
+(use-package helpful
+  :ensure t
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
 
 ;; Modes
 (use-package rust-mode
@@ -117,6 +127,9 @@
   :ensure t)
 (use-package yaml-mode
   :ensure t)
+(use-package hardcore-mode
+  :ensure
+  :config (global-hardcore-mode))
 
 ;; No home page
 (setq inhibit-startup-message t)
@@ -170,6 +183,9 @@
 
 ;; Custom controls
 (delete-selection-mode 1)
+(define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "<f1>") 'help-command)
+(global-set-key [?\C-j] 'newline-and-indent)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -177,10 +193,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
+   '(hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(ivy-current-match ((t (:background "#4e2e49")))))
