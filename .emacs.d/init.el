@@ -32,7 +32,11 @@
 (use-package swiper
   :ensure t)
 (use-package counsel
-  :ensure t)
+  :ensure t
+  :bind (("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file))
+  :config
+  (setq ivy-initial-inputs-alist nil))
 (use-package ivy
   :ensure t
   :bind (("C-s" . swiper)
@@ -51,13 +55,20 @@
          ("C-k" . ivy-reverse-i-search-kill))
   :config
   (ivy-mode 1))
+(use-package ivy-rich
+  :ensure t
+  :config
+  (ivy-rich-mode 1))
 (use-package doom-themes
   :ensure t
   :config
   (setq doom-themes-enable-bold t
     doom-themes-enable-italic t)
   (load-theme 'doom-laserwave t)
-  (doom-themes-visual-bell-config))
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config)
+  (custom-set-faces
+   `(ivy-current-match ((t (:background ,(doom-color 'region)))))))
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
@@ -126,8 +137,7 @@
 (set-fringe-mode 10)
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 80)
 (window-divider-mode +1)
-(setq window-divider-default-right-width 4 window-divider-default-bottom-width 4)
-
+(setq window-divider-default-right-width 2 window-divider-default-bottom-width 2)
 
 ;; Mode-specific configs
 ;; Specifically, blocking tabs in certain modes, and prefering them over spaces
@@ -167,7 +177,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
+   '(ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
