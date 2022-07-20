@@ -35,12 +35,6 @@ import XMonad.Config.Desktop (desktopLayoutModifiers, desktopConfig)
 import qualified Data.Map as M
 import qualified Data.Bool as B
 
--- Whether caps or esc is used for esc should be toggleable
-newtype XCapState = XCapState { xcapstate :: Bool } deriving Typeable
-
-instance ExtensionClass XCapState where
-        initialValue = XCapState False
-
 -- Use alacritty as the default terminal
 myTerminal = "alacritty"
 
@@ -59,13 +53,6 @@ myKeys (XConfig {modMask = modm}) = M.fromList $
         , ((controlMask .|. shiftMask, xK_space), spawn "rofi -show run")
         , ((controlMask .|. shiftMask, xK_2), spawn "rofi -show ssh")
         , ((controlMask .|. shiftMask, xK_1), spawn "rofi -show window")
-
-        -- Swap esc and caps when cmd + shift + V
-        , ((modm .|. shiftMask, xK_v), do
-                locked <- fmap xcapstate XS.get 
-                B.bool (spawn "setxkbmap -option caps:swapescape") (spawn "setxkbmap -option") locked
-                XS.put $ XCapState (not locked)
-          )
 
         -- Media controls
         -- XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute, XFAudioPlay, XFAudioPrev, XFAudioNext
