@@ -30,15 +30,13 @@
 ;; Auto-completion for buffer switching, file finding, searching
 ;; This package can be split depending on what repo you find it from
 (use-package swiper
-  :ensure t)
+  )
 (use-package counsel
-  :ensure t
   :bind (("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file))
   :config
   (setq ivy-initial-inputs-alist nil))
 (use-package ivy
-  :ensure t
   :bind (("C-s" . swiper)
          ("C-r" . swiper-backward)
          :map ivy-minibuffer-map
@@ -56,11 +54,9 @@
   :config
   (ivy-mode 1))
 (use-package ivy-rich
-  :ensure t
   :config
   (ivy-rich-mode 1))
 (use-package doom-themes
-  :ensure t
   :config
   (setq doom-themes-enable-bold t
     doom-themes-enable-italic t)
@@ -70,17 +66,14 @@
   (custom-set-faces
    `(ivy-current-match ((t (:background ,(doom-color 'region)))))))
 (use-package doom-modeline
-  :ensure t
   :init (doom-modeline-mode 1)
   :config
   (setq doom-modeline-height 40))
 (use-package all-the-icons
-  :ensure t
   :if (display-graphic-p))
 (use-package tree-sitter
-  :ensure t)
+  )
 (use-package tree-sitter-langs
-  :ensure t
   :config
   (tree-sitter-require 'rust)
   (tree-sitter-require 'json)
@@ -95,18 +88,15 @@
   (tree-sitter-require 'java)
   (tree-sitter-require 'typescript))
 (use-package whitespace
-  :ensure t)
+  )
 (use-package rainbow-delimiters
-  :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 (use-package which-key
-  :ensure t
   :init (which-key-mode)
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 0.3))
 (use-package helpful
-  :ensure t
   :custom
   (counsel-describe-function-function #'helpful-callable)
   (counsel-describe-variable-function #'helpful-variable)
@@ -116,7 +106,7 @@
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 (use-package magit
-  :ensure t)
+  )
 
 ;; Shell settings
 (defun config-term ()
@@ -124,33 +114,28 @@
   (local-set-key (kbd "M-p") 'vterm-previous-prompt))
 
 (use-package term
-  :ensure t
   :config
   (setq explicit-shell-file-name "zsh"))
 (use-package eterm-256color
-  :ensure t
   :hook (term-mode . eterm-256color-mode))
 (use-package vterm
   :commands vterm
-  :ensure t
   :config
   (setq vterm-max-scrollback 10000)
   :hook (vterm-mode . config-term))
 
 ;; Modes
 (use-package rust-mode
-  :ensure t
   :init
   (autoload 'rust-mode "rust-mode" nil t))
 (use-package haskell-mode
-  :ensure t)
+  )
 (use-package yaml-mode
-  :ensure t)
+  )
 (use-package hardcore-mode
   :ensure
   :config (global-hardcore-mode))
 (use-package projectile
-  :ensure t
   :diminish projectile-mode
   :config (projectile-mode)
   :custom ((projectile-completion-system 'ivy))
@@ -159,10 +144,9 @@
   :init
   (setq projectile-switch-project-action #'projectile-dired))
 (use-package counsel-projectile
-  :ensure t
   :config (counsel-projectile-mode))
 (use-package markdown-mode
-  :ensure t)
+  )
 
 ;; No home page
 (setq inhibit-startup-message t)
@@ -217,7 +201,6 @@
   (visual-fill-column-mode 1))
 
 (use-package org
-  :ensure t
   :hook (org-mode . configure-org)
   :config
   (stylize-org)
@@ -228,10 +211,8 @@
   :bind (("C-c l" . org-store-link)
          ("C-c C-l" . org-insert-link)))
 (use-package org-bullets
-  :ensure t
   :hook (org-mode . org-bullets-mode))
 (use-package visual-fill-column
-  :ensure t
   :hook (org-mode . pad-org))
 
 ;; Mode-specific configs
