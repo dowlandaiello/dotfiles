@@ -29,8 +29,7 @@
 
 ;; Auto-completion for buffer switching, file finding, searching
 ;; This package can be split depending on what repo you find it from
-(use-package swiper
-  )
+(use-package swiper)
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file))
@@ -71,8 +70,7 @@
   (setq doom-modeline-height 40))
 (use-package all-the-icons
   :if (display-graphic-p))
-(use-package tree-sitter
-  )
+(use-package tree-sitter)
 (use-package tree-sitter-langs
   :config
   (tree-sitter-require 'rust)
@@ -87,8 +85,7 @@
   (tree-sitter-require 'javascript)
   (tree-sitter-require 'java)
   (tree-sitter-require 'typescript))
-(use-package whitespace
-  )
+(use-package whitespace)
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 (use-package which-key
@@ -105,8 +102,14 @@
   ([remap describe-command] . helpful-command)
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
-(use-package magit
-  )
+(use-package magit)
+(use-package company
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :config
+  (lsp-enable-which-key-integration t))
 
 ;; Shell settings
 (defun config-term ()
@@ -127,11 +130,13 @@
 ;; Modes
 (use-package rust-mode
   :init
-  (autoload 'rust-mode "rust-mode" nil t))
+  (autoload 'rust-mode "rust-mode" nil t)
+  :mode "\\.rs\\'"
+  :hook (rust-mode . lsp-deferred))
 (use-package haskell-mode
-  )
-(use-package yaml-mode
-  )
+  :hook (haskell-mode . lsp-deferred))
+(use-package yaml-mode)
+(use-package json-mode)
 (use-package hardcore-mode
   :ensure
   :config (global-hardcore-mode))
@@ -145,8 +150,19 @@
   (setq projectile-switch-project-action #'projectile-dired))
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
-(use-package markdown-mode
-  )
+(use-package markdown-mode)
+(use-package editorconfig
+  :config (editorconfig-mode 1))
+(use-package prettier-js
+  :hook ((web-mode . prettier-js-mode)
+         (typescript-mode . prettier-js-mode)))
+
+;; Web dev package
+(use-package web-mode)
+(use-package typescript-mode
+  :hook (typescript-mode . lsp-deferred))
+(use-package rjsx-mode
+  :mode "\\.js.*$")
 
 ;; No home page
 (setq inhibit-startup-message t)
@@ -228,7 +244,8 @@
 
 (setq auto-mode-alist
       (append
-       '(("\\.rs\\'" . rust-mode) ("\\.rasi\\'" . prog-mode)) auto-mode-alist))
+       '(("\\.tsx\\'" . web-mode)
+         ("\\.rasi\\'" . prog-mode)) auto-mode-alist))
 (add-hook 'prog-mode-hook (lambda ()
                             (whitespace-mode)
                             (line-number-mode)
@@ -239,12 +256,15 @@
                             (setq whitespace-display-mappings
                                   '((tab-mark 9 [124 9] [92 9])))))
 (add-hook 'rust-mode-hook (lambda ()
-                            (tree-sitter-hl-mode)
-                            (disable-tabs)))
+                            (tree-sitter-hl-mode)))
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
+(add-hook 'lisp-data-mode 'disable-tabs)
 
-;; Custom controls
+;; TODO: Come up with a better way to detect NVM binaries
+(setq exec-path (append exec-path '("~/.nvm/versions/node/v16.4.0/bin")))
+
+;; C-h backspace, f1 for help
 (delete-selection-mode 1)
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "<f1>") 'help-command)
@@ -256,7 +276,51 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(vterm eterm-256color org-bullets markdown-mode magit counsel-projectile projectile hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy)))
+   '(lsp-mode web-mode company json-mode vterm eterm-256color org-bullets markdown-mode magit counsel-projectile projectile hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy))
+ '(safe-local-variable-values
+   '((eval setq org-publish-project-alist
+	   (cons
+	    (let
+		((based
+		  (file-name-as-directory
+		   (projectile-project-root))))
+	      (list "roadmap" :base-directory
+		    (concat based "content")
+		    :recursive t :publishing-directory
+		    (concat based "public")
+		    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
+	    (cond
+	     ((boundp 'org-publish-project-alist)
+	      org-publish-project-alist)
+	     (t 'nil))))
+     (eval setq org-publish-project-alist
+	   (cons
+	    (let
+		((based
+		  (file-name-directory buffer-file-name)))
+	      (list "roadmap" :base-directory
+		    (concat based "content")
+		    :recursive t :publishing-directory
+		    (concat based "public")
+		    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
+	    (cond
+	     ((boundp 'org-publish-project-alist)
+	      org-publish-project-alist)
+	     (t 'nil))))
+     (eval setq org-publish-project-alist
+	   (cons
+	    (let
+		((based
+		  (file-name-as-directory default-directory)))
+	      (list "roadmap" :base-directory
+		    (concat based "content")
+		    :recursive t :publishing-directory
+		    (concat based "public")
+		    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
+	    (cond
+	     ((boundp 'org-publish-project-alist)
+	      org-publish-project-alist)
+	     (t 'nil)))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
