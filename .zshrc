@@ -2,8 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+
 export ZSH="/home/dowlandaiello/.oh-my-zsh"
-export NVM_LAZY=1
+export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=("emacs")
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,7 +73,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf-zsh-plugin zsh-syntax-highlighting zsh-vim-mode nvm)
+plugins=(git fzf-zsh-plugin zsh-syntax-highlighting zsh-vim-mode zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,6 +131,13 @@ alias ngrep="grep -r --exclude-dir=node_modules"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 export GTK_THEME=Adwaita:dark
 
-export PATH="/home/dowlandaiello/.yarn/bin/:/home/dowlandaiello/.local/bin:$PATH"
+export PATH="/home/dowlandaiello/.yarn/bin/:/home/dowlandaiello/.local/bin:/home/dowlandaiello/node_modules/.bin:$PATH"
 export GOPATH="$HOME/go/"
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# bun completions
+[ -s "/home/dowlandaiello/.bun/_bun" ] && source "/home/dowlandaiello/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/home/dowlandaiello/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

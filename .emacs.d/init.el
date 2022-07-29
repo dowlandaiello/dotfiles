@@ -156,6 +156,10 @@
 (use-package prettier-js
   :hook ((web-mode . prettier-js-mode)
          (typescript-mode . prettier-js-mode)))
+(use-package git-modes)
+(recentf-mode 1)
+(savehist-mode 1)
+(setq history-length 25)
 
 ;; Web dev package
 (use-package web-mode)
@@ -252,7 +256,7 @@
                             (column-number-mode)
                             (enable-tabs)
                             (setq display-line-numbers 'relative)
-                            (setq whitespace-style '(face tabs tab-mark trailing))
+                            (setq whitespace-style '(face spaces space-mark tabs newline tab-mark trailing))
                             (setq whitespace-display-mappings
                                   '((tab-mark 9 [124 9] [92 9])))))
 (add-hook 'rust-mode-hook (lambda ()
@@ -276,9 +280,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-mode web-mode company json-mode vterm eterm-256color org-bullets markdown-mode magit counsel-projectile projectile hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy))
+   '(git-modes lsp-mode web-mode company json-mode vterm eterm-256color org-bullets markdown-mode magit counsel-projectile projectile hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy))
  '(safe-local-variable-values
-   '((eval setq org-publish-project-alist
+   '((projectile-project-test-cmd . "RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://rpc-mumbai.matic.today --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
+     (projectile-test-cmd . "RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://rpc-mumbai.matic.today --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
+     (eval setq org-publish-project-alist
 	   (cons
 	    (let
 		((based
