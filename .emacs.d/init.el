@@ -110,6 +110,9 @@
   :commands (lsp lsp-deferred)
   :config
   (lsp-enable-which-key-integration t))
+(use-package ace-window
+  :bind
+  (("M-o" . ace-window)))
 
 ;; Shell settings
 (defun config-term ()
@@ -137,19 +140,27 @@
   :hook (haskell-mode . lsp-deferred))
 (use-package yaml-mode)
 (use-package json-mode)
+(use-package python-mode
+  :hook (python-mode . lsp-deferred))
+(use-package python-black
+  :after python
+  :hook (python-mode . python-black-on-save-mode))
 (use-package hardcore-mode
   :ensure
   :config (global-hardcore-mode))
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
+  (add-to-list 'projectile-globally-ignored-directories "**/node_modules")
+  (add-to-list 'projectile-globally-ignored-directories "**/.next")
   :custom ((projectile-completion-system 'ivy))
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
   (setq projectile-switch-project-action #'projectile-dired))
 (use-package counsel-projectile
-  :config (counsel-projectile-mode))
+  :config (counsel-projectile-mode)
+  (setq projectile-enable-caching t))
 (use-package markdown-mode)
 (use-package editorconfig
   :config (editorconfig-mode 1))
@@ -159,10 +170,12 @@
 (use-package git-modes)
 (recentf-mode 1)
 (savehist-mode 1)
+(winner-mode 1)
 (setq history-length 25)
 
 ;; Web dev package
-(use-package web-mode)
+(use-package web-mode
+  :hook (web-mode . lsp-deferred))
 (use-package typescript-mode
   :hook (typescript-mode . lsp-deferred))
 (use-package rjsx-mode
@@ -185,9 +198,10 @@
 ;; - bottom padding
 ;; - font
 (set-fringe-mode 10)
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 80)
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 80)
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 76)
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 76)
 (set-face-attribute 'variable-pitch nil :font "Roboto":height 90 :weight 'regular)
+(set-face-attribute 'lazy-highlight-face nil :inherit 'lazy-highlight)
 (window-divider-mode +1)
 (setq window-divider-default-right-width 2 window-divider-default-bottom-width 2)
 
@@ -221,13 +235,17 @@
   (visual-fill-column-mode 1))
 
 (use-package org
-  :hook (org-mode . configure-org)
+  :hook ((org-mode . configure-org)
+         (org-mode . lsp-org))
   :config
   (stylize-org)
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
   (setq org-agenda-files (directory-files-recursively "~/org/" "\\.org$"))
+  (org-babel-do-load-languages
+   'org-babel-load-languages '((emacs-lisp . t)
+                               (python . t)))
   :bind (("C-c l" . org-store-link)
          ("C-c C-l" . org-insert-link)))
 (use-package org-bullets
@@ -250,15 +268,19 @@
       (append
        '(("\\.tsx\\'" . web-mode)
          ("\\.rasi\\'" . prog-mode)) auto-mode-alist))
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'prog-mode-hook (lambda ()
                             (whitespace-mode)
                             (line-number-mode)
                             (column-number-mode)
                             (enable-tabs)
                             (setq display-line-numbers 'relative)
-                            (setq whitespace-style '(face spaces space-mark tabs newline tab-mark trailing))
+                            (setq whitespace-style '(face spaces space-mark tabs tab-mark trailing))
                             (setq whitespace-display-mappings
-                                  '((tab-mark 9 [124 9] [92 9])))))
+                                  '((tab-mark 9 [124 9] [92 9])
+                                  (space-mark 32 [183] [46])
+                                  (space-mark 160 [164] [95])
+                                  (newline-mark 10 [36 10])))))
 (add-hook 'rust-mode-hook (lambda ()
                             (tree-sitter-hl-mode)))
 (add-hook 'lisp-mode-hook 'disable-tabs)
@@ -280,53 +302,55 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(git-modes lsp-mode web-mode company json-mode vterm eterm-256color org-bullets markdown-mode magit counsel-projectile projectile hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy))
+   '(fastnav python-black python-mode ace-window git-modes lsp-mode web-mode company json-mode vterm eterm-256color org-bullets markdown-mode magit counsel-projectile projectile hardcore-mode helpful ivy-rich yaml-mode which-key rainbow-delimiters tree-sitter-langs tree-sitter doom-themes rust-mode all-the-icons doom-modeline counsel swiper use-package ivy))
  '(safe-local-variable-values
-   '((projectile-project-test-cmd . "RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://rpc-mumbai.matic.today --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
+   '((projectile-project-test-cmd . "RUST_BACKTRACE=1 RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://matic-mumbai.chainstacklabs.com --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
+     (projectile-project-test-cmd . "RUST_BACKTRACE=1 RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://rpc-mumbai.matic.today --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
+     (projectile-project-test-cmd . "RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://rpc-mumbai.matic.today --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
      (projectile-test-cmd . "RUST_LOG=debug cargo run -- new ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world_bg.wasm ~/eth/src/github.com/vision-dao/beacon-dao/fixtures/modules/beacon_dao-hello_world/pkg/beacon_dao_hello_world.js --eth-rpc-uri https://rpc-mumbai.matic.today --contracts-dir ~/eth/src/github.com/vision-dao/beacon-dao/artifacts")
      (eval setq org-publish-project-alist
-	   (cons
-	    (let
-		((based
-		  (file-name-as-directory
-		   (projectile-project-root))))
-	      (list "roadmap" :base-directory
-		    (concat based "content")
-		    :recursive t :publishing-directory
-		    (concat based "public")
-		    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
-	    (cond
-	     ((boundp 'org-publish-project-alist)
-	      org-publish-project-alist)
-	     (t 'nil))))
+           (cons
+            (let
+                ((based
+                  (file-name-as-directory
+                   (projectile-project-root))))
+              (list "roadmap" :base-directory
+                    (concat based "content")
+                    :recursive t :publishing-directory
+                    (concat based "public")
+                    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
+            (cond
+             ((boundp 'org-publish-project-alist)
+              org-publish-project-alist)
+             (t 'nil))))
      (eval setq org-publish-project-alist
-	   (cons
-	    (let
-		((based
-		  (file-name-directory buffer-file-name)))
-	      (list "roadmap" :base-directory
-		    (concat based "content")
-		    :recursive t :publishing-directory
-		    (concat based "public")
-		    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
-	    (cond
-	     ((boundp 'org-publish-project-alist)
-	      org-publish-project-alist)
-	     (t 'nil))))
+           (cons
+            (let
+                ((based
+                  (file-name-directory buffer-file-name)))
+              (list "roadmap" :base-directory
+                    (concat based "content")
+                    :recursive t :publishing-directory
+                    (concat based "public")
+                    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
+            (cond
+             ((boundp 'org-publish-project-alist)
+              org-publish-project-alist)
+             (t 'nil))))
      (eval setq org-publish-project-alist
-	   (cons
-	    (let
-		((based
-		  (file-name-as-directory default-directory)))
-	      (list "roadmap" :base-directory
-		    (concat based "content")
-		    :recursive t :publishing-directory
-		    (concat based "public")
-		    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
-	    (cond
-	     ((boundp 'org-publish-project-alist)
-	      org-publish-project-alist)
-	     (t 'nil)))))))
+           (cons
+            (let
+                ((based
+                  (file-name-as-directory default-directory)))
+              (list "roadmap" :base-directory
+                    (concat based "content")
+                    :recursive t :publishing-directory
+                    (concat based "public")
+                    :index-filename "Status.org" :index-title "Vision Development Roadmap"))
+            (cond
+             ((boundp 'org-publish-project-alist)
+              org-publish-project-alist)
+             (t 'nil)))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
