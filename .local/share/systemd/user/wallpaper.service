@@ -1,9 +1,0 @@
-[Unit]
-Description=Wallpaper Daemon
-
-[Install]
-WantedBy=multi-user.target
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/feh --bg-fill /home/dowlandaiello/Wallpaper/nyc.jpg
