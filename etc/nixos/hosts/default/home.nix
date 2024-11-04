@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -29,6 +29,9 @@
     };
   };
 
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [ "slack" "zoom" "obsidian" ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "dowlandaiello";
@@ -50,7 +53,7 @@
       #!/bin/sh
       dmenu_run  -sb "#${config.colorScheme.palette.base00}" -sf "#${config.colorScheme.palette.base05}"
     '';
-  in [
+  in with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -69,6 +72,35 @@
     # '')
     pkgs.dmenu
     my_dmenu
+    feh
+    gruvbox-gtk-theme
+    zsh-syntax-highlighting
+    python311Packages.python-lsp-server
+    vesktop
+    xclip
+    slack
+    zoom-us
+    black
+    python3
+    go
+    libgcc
+    gcc
+    cargo
+    rustc
+    rust-analyzer
+    rustfmt
+    pavucontrol
+    docker-compose
+    tor-browser
+    protobuf
+    nodePackages.typescript-language-server
+    typescript
+    kdePackages.kleopatra
+    signal-desktop
+    obsidian
+    chromium
+    inputs.mywm.packages.${system}.default
+    flameshot
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

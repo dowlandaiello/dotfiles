@@ -135,7 +135,7 @@ in {
         date = "%a %b %d";
         date-alt = "%Y-%m-%d";
 
-        time = "%H:%M";
+        time = "%I:%M";
         time-alt = "%H:%M";
 
         label = "${icons.date} %date% %time%";

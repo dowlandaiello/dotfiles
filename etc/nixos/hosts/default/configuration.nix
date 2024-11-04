@@ -71,8 +71,6 @@ in {
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "spotify" "slack" "zoom" "obsidian" ];
   nixpkgs.config.pulseaudio = true;
 
   # Configure keymap in X11
@@ -146,55 +144,20 @@ in {
     home-manager
     git
     firefox
-    feh
     killall
-    ffmpeg
-    spotify
     neofetch
-    gruvbox-gtk-theme
-    zsh-syntax-highlighting
     ripgrep
-    python3
-    python311Packages.python-lsp-server
-    vesktop
     gnumake
-    xclip
-    slack
-    zoom-us
-    black
     nixfmt-classic
-    go
-    libgcc
-    gcc
     lsof
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
-    pavucontrol
-    dive
-    docker-compose
     zip
     unzip
-    tor-browser
-    protobuf
-    nodePackages.typescript-language-server
-    typescript
     openssl
     pkg-config
     libiconv
-    kdePackages.kleopatra
-    signal-desktop
-    obsidian
-    wasm-tools
-    chromium
     dconf
-    inputs.mywm.packages.${system}.default
     xorg.xmodmap
-    dmenu
-    cowsay
     xorg.xwd
-    flameshot
     pulseaudioFull
     (polybar.override { mpdSupport = true; })
   ];

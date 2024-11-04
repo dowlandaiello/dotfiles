@@ -52,6 +52,9 @@
       ;; Alert errors
       (setq visible-bell t)
       (setq inhibit-startup-screen t)
+      (setq inhibit-startup-message t)
+      (setq initial-scratch-message nil)
+      (setq inhibit-splash-screen t)
 
       ;; Visual preferences:
       ;; - dark theme
