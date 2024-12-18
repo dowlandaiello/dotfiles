@@ -16,21 +16,20 @@
     ./features/polybar.nix
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+  colorScheme = inputs.nix-colors.colorSchemes.default-light;
 
   dconf = {
     enable = true;
 
     settings = {
       "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-        gtk-theme = "Gruvbox-Dark-Hard";
+        color-scheme = "prefer-light";
       };
     };
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "slack" "zoom" "obsidian" ];
+    builtins.elem (lib.getName pkg) [ "slack" "zoom" "obsidian" "vscode-extension-ms-vscode-cpptools" ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -51,7 +50,7 @@
   home.packages = let
     my_dmenu = pkgs.writeShellScriptBin "mydmenu_run" ''
       #!/bin/sh
-      dmenu_run  -sb "#${config.colorScheme.palette.base00}" -sf "#${config.colorScheme.palette.base05}"
+      dmenu_run  -nb "#${config.colorScheme.palette.base00}" -nf "#${config.colorScheme.palette.base07}" -sf "#${config.colorScheme.palette.base00}" -sb "#${config.colorScheme.palette.base07}"
     '';
   in with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -70,7 +69,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.dmenu
+    dmenu
     my_dmenu
     feh
     gruvbox-gtk-theme
@@ -89,6 +88,7 @@
     rustc
     rust-analyzer
     rustfmt
+    lean4
     pavucontrol
     docker-compose
     tor-browser
@@ -99,8 +99,12 @@
     signal-desktop
     obsidian
     chromium
-    inputs.mywm.packages.${system}.default
     flameshot
+    vale
+    inputs.proselint.packages.${system}.default
+    lldb
+    gdb
+    llvm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -115,6 +119,14 @@
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
+    # '';
+    # ".vale.ini".text = ''
+    #   StylesPath = styles
+    #
+    #   Vocab = Blog
+    #
+    #   [*.org]
+    #   BasedOnStyles = Microsoft
     # '';
   };
 

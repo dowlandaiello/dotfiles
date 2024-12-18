@@ -1,6 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
-let system = "x86_64-linux";
+let
+  system = "x86_64-linux";
 in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,12 +26,11 @@ in {
   networking.hostName = "dggLnixsigma"; # Define your hostname.
   networking.hostId = "e5bf82bb";
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable =
-    true; # Easiest to use and most distros use this by default.
+  networking.wireless.enable = false;
+  networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/NewYork";
+  time.timeZone = "America/New_York";
+  services.avahi.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -38,10 +38,7 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "iosevka";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
+  console.useXkbConfig = true; # use xkb.options in tty.
 
   fonts.packages = with pkgs; [
     font-awesome
@@ -68,6 +65,7 @@ in {
       plugins = [ "git" ];
     };
   };
+  programs.nix-ld.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -82,20 +80,109 @@ in {
       options = "ctrl:swapcaps";
     };
 
-    displayManager.startx.enable = true;
-  };
+    videoDrivers = [ "amdgpu" ];
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd startx";
+    windowManager = {
+      xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+        config = pkgs.writeText "xmonad.hs" ''
+          import qualified Data.Map as Map
+          import XMonad
+          import XMonad.Util.SpawnOnce (spawnOnce)
+          import XMonad.Hooks.EwmhDesktops
+          import XMonad.Util.EZConfig (additionalKeys)
+          import XMonad.Util.Themes
+          import XMonad.Layout.DecorationEx
+          import XMonad.Layout.DecorationMadness
+          import XMonad.Layout.Tabbed
+          import XMonad.Layout
+          import XMonad.Layout.NoBorders
+          import XMonad.Layout.Decoration
+          import XMonad.Layout.ResizableTile
+          import XMonad.Layout.TwoPane
+          import XMonad.Layout.Spacing
+          import XMonad.Hooks.ManageDocks
+          import XMonad.StackSet
+
+          myTheme = def {
+            activeColor           = "#FFFFFF"
+            , inactiveColor       = "#aeaead"
+            , urgentColor         = "#FFFFFF"
+            , activeBorderColor   = "#000000"
+            , inactiveBorderColor = "#000000"
+            , urgentBorderColor   = "#000000"
+            , activeBorderWidth   = 1
+            , inactiveBorderWidth = 1
+            , urgentBorderWidth   = 1
+            , activeTextColor     = "#000000"
+            , inactiveTextColor   = "#858585"
+            , urgentTextColor     = "#000000"
+            , fontName            = "Iosevka"
+            , decoWidth           = 200
+            , decoHeight          = 20
+            , windowTitleAddons   = []
+            , windowTitleIcons    = []
+          }
+
+          myLayout = avoidStruts $ tiled
+            ||| noBorders Full
+            ||| noBorders (tabbed shrinkText myTheme)
+            ||| floating
+            where
+              tiled = tallDefault shrinkText myTheme
+              floating = floatSimple shrinkText myTheme
+
+          myStartupHook :: X ()
+          myStartupHook = do
+            spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Images/wallpapers/mac.png"
+            spawnOnce "${pkgs.polybar}/bin/polybar main >>/home/dowlandaiello/.config/polybar/logfile 2>&1"
+
+          main = xmonad $ docks $ ewmhFullscreen $ ewmh $ def
+              { terminal    = "${pkgs.alacritty}/bin/alacritty"
+              , modMask     = mod4Mask
+              , startupHook = myStartupHook
+              , layoutHook = myLayout
+              , borderWidth = 1
+              , normalBorderColor = "#000000"
+              , focusedBorderColor = "#000000"
+              } `additionalKeys` [
+              ((mod4Mask, xK_Return),
+                      spawn "${pkgs.alacritty}/bin/alacritty")
+              , ((controlMask .|. shiftMask, xK_space), spawn "mydmenu_run")
+              , ((mod4Mask, xK_f), sendMessage $ JumpToLayout "Full")
+              , ((mod4Mask, xK_n), windows focusDown)
+              , ((mod4Mask, xK_p), windows focusUp)
+              , ((mod4Mask .|. shiftMask, xK_n), windows swapDown)
+              , ((mod4Mask .|. shiftMask, xK_p), windows swapUp)
+            ]
+        '';
       };
     };
+    xrandrHeads = [
+      {
+        output = "eDP-1";
+        primary = true;
+      }
+      { output = "DP-4"; }
+    ];
   };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
+
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database DBuser origin-address auth-method
+      local all       all     trust
+      # ipv4
+      host  all      all     127.0.0.1/32   trust
+      # ipv6
+      host all       all     ::1/128        trust
+    '';
+  };
 
   # Enable sound.
   hardware.pulseaudio.enable = true;
@@ -127,16 +214,6 @@ in {
 
   xdg.portal.config = { common = { default = [ "gtk" ]; }; };
 
-  environment.etc."X11/xinit/xinitrc" =
-    let mywm = inputs.mywm.packages.${system}.mywm;
-    in {
-      text = ''
-        #!/bin/sh
-        ${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/wa.jpg
-        RUST_LOG=info ${mywm}/bin/mywm >>/home/dowlandaiello/.config/mywm/logfile 2>&1 &
-        ${pkgs.polybar}/bin/polybar main >>/home/dowlandaiello/.config/polybar/logfile 2>&1
-      '';
-    };
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
@@ -156,7 +233,6 @@ in {
     pkg-config
     libiconv
     dconf
-    xorg.xmodmap
     xorg.xwd
     pulseaudioFull
     (polybar.override { mpdSupport = true; })

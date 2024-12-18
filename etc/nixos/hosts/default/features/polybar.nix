@@ -29,9 +29,10 @@ in {
         radius = 0;
         fixed-center = true;
 
-        bottom = true;
+        bottom = false;
+        top = true;
         background = "#${config.colorScheme.palette.base00}";
-        foreground = "#${config.colorScheme.palette.base04}";
+        foreground = "#${config.colorScheme.palette.base07}";
 
         modules-left = "ewmh";
 
@@ -43,7 +44,7 @@ in {
         override-redirect = true;
         wm-restack = "i3";
 
-        border-top-size = 1;
+        border-bottom-size = 1;
         border-top-color = "#${config.colorScheme.palette.base04}";
         line-size = 1;
       };

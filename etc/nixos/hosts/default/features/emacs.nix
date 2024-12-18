@@ -4,41 +4,50 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs;
-    extraPackages = epkgs: with epkgs; [
-      nix-mode
-      nix-sandbox
-      vterm
-      gruvbox-theme
-      hardcore-mode
-      python-mode
-      python-black
-      lsp-mode
-      lsp-ui
-      doom-modeline
-      all-the-icons
-      treesit-grammars.with-all-grammars
-      leerzeichen
-      rainbow-delimiters
-      which-key
-      helpful
-      editorconfig
-      projectile
-      magit
-      company
-      ace-window
-      ivy
-      swiper
-      counsel
-      counsel-projectile
-      auto-virtualenv
-      xclip
-      rust-mode
-      direnv
-      solidity-mode
-      web-mode
-      typescript-mode
-      prettier-js
-    ];
+    extraPackages = epkgs:
+      with epkgs; [
+        nix-mode
+        nix-sandbox
+        vterm
+        solarized-theme
+        hardcore-mode
+        python-mode
+        python-black
+        lsp-mode
+        lsp-ui
+        doom-modeline
+        all-the-icons
+        treesit-grammars.with-all-grammars
+        leerzeichen
+        rainbow-delimiters
+        which-key
+        helpful
+        editorconfig
+        projectile
+        magit
+        company
+        ace-window
+        ivy
+        swiper
+        counsel
+        counsel-projectile
+        auto-virtualenv
+        xclip
+        rust-mode
+        direnv
+        solidity-mode
+        web-mode
+        typescript-mode
+        prettier-js
+        lsp-haskell
+        haskell-mode
+        flycheck
+        (callPackage ./lean4-mode.nix {
+          inherit (pkgs) fetchFromGitHub;
+          inherit (pkgs.lib) fakeHash;
+          inherit (epkgs) trivialBuild compat lsp-mode dash magit-section;
+        })
+      ];
     extraConfig = ''
       ;; Remove GUI bloat
       (scroll-bar-mode -1)
@@ -57,10 +66,9 @@
       (setq inhibit-splash-screen t)
 
       ;; Visual preferences:
-      ;; - dark theme
       ;; - bottom padding
       ;; - font
-      (load-theme 'gruvbox-dark-hard :no-confirm)
+      (load-theme 'solarized-light t)
       (set-fringe-mode 10)
       (set-face-attribute 'default nil :font "Iosevka")
       (set-face-attribute 'fixed-pitch nil :font "Iosevka")
@@ -78,15 +86,18 @@
       (setq vterm-shell "nu")
 
       (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+      (add-hook 'haskell-mode-hook (lambda ()
+                                   (lsp-deferred)))
       (add-hook 'web-mode-hook (lambda ()
                                (lsp-deferred)
                                (prettier-js-mode)))
-      (add-hook 'typescript-mode-hook (lambda()
+      (add-hook 'typescript-mode-hook (lambda ()
                                       (prettier-js-mode)
                                       (lsp-deferred)))
       (add-hook 'python-mode-hook 'lsp)
       (add-hook 'python-mode-hook 'python-black-on-save-mode)
-      (add-hook 'rust-mode-hook 'lsp)
+      (add-hook 'rust-mode-hook (lambda ()
+        (lsp)))
       (add-hook 'org-mode-hook (lambda ()
                                (configure-org)
                                (stylize-org)
@@ -105,6 +116,7 @@
                                       (newline-mark 10 [36 10])))))
 
       ;; Flycheck
+      (global-flycheck-mode)
       (setq flycheck-command-wrapper-function
               (lambda (command) (apply 'nix-shell-command (nix-current-sandbox) command))
             flycheck-executable-find

@@ -10,6 +10,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     mywm.url = "github:dowlandaiello/mywm";
+    proselint.url = "github:dowlandaiello/proselint.nix";
   };
 
   outputs = { nixpkgs, ... }@inputs:
