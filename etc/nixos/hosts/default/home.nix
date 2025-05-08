@@ -16,20 +16,24 @@
     ./features/polybar.nix
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.default-light;
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
   dconf = {
     enable = true;
 
     settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-light";
-      };
+      "org/gnome/desktop/interface" = { color-scheme = "prefer-light"; };
     };
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "slack" "zoom" "obsidian" "vscode-extension-ms-vscode-cpptools" ];
+    builtins.elem (lib.getName pkg) [
+      "slack"
+      "zoom"
+      "spotify"
+      "obsidian"
+      "vscode-extension-ms-vscode-cpptools"
+    ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -48,6 +52,13 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = let
+    tex = (pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-basic dvisvgm dvipng # for preview and export as html
+        wrapfig amsmath ulem hyperref capt-of;
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+    });
     my_dmenu = pkgs.writeShellScriptBin "mydmenu_run" ''
       #!/bin/sh
       dmenu_run  -nb "#${config.colorScheme.palette.base00}" -nf "#${config.colorScheme.palette.base07}" -sf "#${config.colorScheme.palette.base00}" -sb "#${config.colorScheme.palette.base07}"
@@ -69,7 +80,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    nerd-fonts.monoid
     dmenu
+    spotify
     my_dmenu
     feh
     gruvbox-gtk-theme
@@ -88,7 +101,6 @@
     rustc
     rust-analyzer
     rustfmt
-    lean4
     pavucontrol
     docker-compose
     tor-browser
@@ -102,9 +114,15 @@
     flameshot
     vale
     inputs.proselint.packages.${system}.default
+    elan
     lldb
     gdb
     llvm
+    obs-studio
+    tex
+    (rstudioWrapper.override {
+      packages = with rPackages; [ Rmpfr readr dplyr tidyverse ];
+    })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -147,6 +165,8 @@
     GOPATH = "/home/dowlandaiello/go";
     GOBIN = "/home/dowlandaiello/go/bin";
     PATH = "$PATH:/home/dowlandaiello/go/bin";
+    GDK_BACKEND = "x11";
+    GDK_GL = "gles";
   };
 
   # Let Home Manager install and manage itself.

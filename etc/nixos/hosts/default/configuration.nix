@@ -1,7 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 
-let
-  system = "x86_64-linux";
+let system = "x86_64-linux";
 in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -28,8 +27,10 @@ in {
   # Pick only one of the below networking options.
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
+  networking.dhcpcd.enable = true;
+  services.resolved.enable = true;
 
-  time.timeZone = "America/New_York";
+  time.timeZone = "America/Los_Angeles";
   services.avahi.enable = true;
 
   # Configure network proxy if necessary
@@ -53,7 +54,10 @@ in {
     proggyfonts
     roboto
     iosevka
-    nerdfonts
+    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
+    nerd-fonts.iosevka-term-slab
+    nerd-fonts.monoid
   ];
 
   # Zsh
@@ -72,6 +76,7 @@ in {
   nixpkgs.config.pulseaudio = true;
 
   # Configure keymap in X11
+  services.autorandr.enable = true;
   services.xserver = {
     enable = true;
 
@@ -83,7 +88,8 @@ in {
     videoDrivers = [ "amdgpu" ];
 
     windowManager = {
-      xmonad = {
+      xmonad = let colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+      in {
         enable = true;
         enableContribAndExtras = true;
         config = pkgs.writeText "xmonad.hs" ''
@@ -106,21 +112,21 @@ in {
           import XMonad.StackSet
 
           myTheme = def {
-            activeColor           = "#FFFFFF"
-            , inactiveColor       = "#aeaead"
-            , urgentColor         = "#FFFFFF"
-            , activeBorderColor   = "#000000"
-            , inactiveBorderColor = "#000000"
-            , urgentBorderColor   = "#000000"
+            activeColor           = "#${colorScheme.palette.base06}"
+            , inactiveColor       = "#${colorScheme.palette.base02}"
+            , urgentColor         = "#${colorScheme.palette.base06}"
+            , activeBorderColor   = "#${colorScheme.palette.base06}"
+            , inactiveBorderColor = "#${colorScheme.palette.base02}"
+            , urgentBorderColor   = "#${colorScheme.palette.base05}"
             , activeBorderWidth   = 1
             , inactiveBorderWidth = 1
             , urgentBorderWidth   = 1
-            , activeTextColor     = "#000000"
-            , inactiveTextColor   = "#858585"
-            , urgentTextColor     = "#000000"
+            , activeTextColor     = "#${colorScheme.palette.base00}"
+            , inactiveTextColor   = "#${colorScheme.palette.base06}"
+            , urgentTextColor     = "#${colorScheme.palette.base06}"
             , fontName            = "Iosevka"
-            , decoWidth           = 200
-            , decoHeight          = 20
+            , decoWidth           = 0
+            , decoHeight          = 0
             , windowTitleAddons   = []
             , windowTitleIcons    = []
           }
@@ -135,7 +141,7 @@ in {
 
           myStartupHook :: X ()
           myStartupHook = do
-            spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Images/wallpapers/mac.png"
+            spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/wa.jpg"
             spawnOnce "${pkgs.polybar}/bin/polybar main >>/home/dowlandaiello/.config/polybar/logfile 2>&1"
 
           main = xmonad $ docks $ ewmhFullscreen $ ewmh $ def
@@ -144,8 +150,8 @@ in {
               , startupHook = myStartupHook
               , layoutHook = myLayout
               , borderWidth = 1
-              , normalBorderColor = "#000000"
-              , focusedBorderColor = "#000000"
+              , normalBorderColor = "#${colorScheme.palette.base02}"
+              , focusedBorderColor = "#${colorScheme.palette.base07}"
               } `additionalKeys` [
               ((mod4Mask, xK_Return),
                       spawn "${pkgs.alacritty}/bin/alacritty")
@@ -220,6 +226,7 @@ in {
     emacs
     home-manager
     git
+    git-lfs
     firefox
     killall
     neofetch
@@ -236,6 +243,9 @@ in {
     xorg.xwd
     pulseaudioFull
     (polybar.override { mpdSupport = true; })
+    mesa
+    mesa.drivers
+    libglvnd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

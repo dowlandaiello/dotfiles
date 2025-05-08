@@ -3,9 +3,15 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
+    package = pkgs.emacsNativeComp.override {
+      withXwidgets = false;
+      withNativeCompilation = true;
+    };
     extraPackages = epkgs:
       with epkgs; [
+        proof-general
+        auctex
+        doom-themes
         nix-mode
         nix-sandbox
         vterm
@@ -30,6 +36,7 @@
         ivy
         swiper
         counsel
+        catppuccin-theme
         counsel-projectile
         auto-virtualenv
         xclip
@@ -42,10 +49,15 @@
         lsp-haskell
         haskell-mode
         flycheck
+        company-coq
+        gptel
+        ace-jump-mode
+        poly-R
+        ess
         (callPackage ./lean4-mode.nix {
           inherit (pkgs) fetchFromGitHub;
           inherit (pkgs.lib) fakeHash;
-          inherit (epkgs) trivialBuild compat lsp-mode dash magit-section;
+          inherit (epkgs) melpaBuild compat lsp-mode dash magit-section;
         })
       ];
     extraConfig = ''
@@ -54,6 +66,47 @@
       (tool-bar-mode -1)
       (tooltip-mode -1)
       (menu-bar-mode -1)
+      (require 'lean4-mode)
+      (require 'ace-jump-mode)
+
+      (load "auctex.el" nil t t)
+
+      (setq TeX-auto-save t)
+      (setq TeX-parse-self t)
+
+      (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+      (setq gc-cons-threshold (* 100 1024 1024))
+      (setq gc-cons-percentage 0.1)
+
+      (add-to-list 'default-frame-alist '(inhibit-double-buffering . nil))
+
+      (setq imagemagick-enabled-types t)
+      (setq image-use-external-converter t)
+
+      (setq x-underline-at-descent-line t)
+      (setq x-use-underline-position-properties nil)
+
+      (add-to-list 'warning-suppress-log-types '(lsp-mode))
+      (add-to-list 'warning-suppress-types '(lsp-mode))
+
+      (defun doom-defer-gc-h ()
+        (setq gc-cons-threshold most-positive-fixnum))
+
+      (defun doom-restore-gc-h ()
+             (run-at-time 1 nil (lambda () (setq gc-cons-threshold (* 100 1024 1024)))))
+
+      (add-hook 'minibuffer-setup-hook #'doom-defer-gc-h)
+      (add-hook 'minibuffer-exit-hook #'doom-restore-gc-h)
+
+      (setq scroll-margin 3)
+      (setq scroll-conservatively 100000)
+      (setq scroll-preserve-screen-position 1)
+      (setq auto-window-vscroll nil)
+
+      (setq fast-but-imprecise-scrolling t)
+      (setq jit-lock-defer-time 0)
+      (setq redisplay-skip-fontification-on-input t)
 
       (xclip-mode 1)
       (direnv-mode)
@@ -65,13 +118,12 @@
       (setq initial-scratch-message nil)
       (setq inhibit-splash-screen t)
 
-      ;; Visual preferences:
-      ;; - bottom padding
-      ;; - font
-      (load-theme 'solarized-light t)
+      (load-theme 'catppuccin t)
+      (setq catppuccin-flavor 'mocha)
+      (catppuccin-reload)
       (set-fringe-mode 10)
-      (set-face-attribute 'default nil :font "Iosevka")
-      (set-face-attribute 'fixed-pitch nil :font "Iosevka")
+      (set-face-attribute 'default nil :font "Iosevka Nerd Font")
+      (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font")
       (set-face-attribute 'variable-pitch nil :font "Roboto" :weight 'regular)
       (window-divider-mode +1)
       (setq window-divider-default-right-width 2 window-divider-default-bottom-width 2)
@@ -83,7 +135,11 @@
       (global-hardcore-mode)
 
       (setq vterm-max-scrollback 10000)
+      (setq read-process-output-max (* 1024 1024)) ;; 1mb
       (setq vterm-shell "nu")
+      (add-hook 'eshell-mode-hook (lambda () (setenv "TERM" "dumb")))
+      (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
+      (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
       (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
       (add-hook 'haskell-mode-hook (lambda ()
@@ -137,6 +193,20 @@
           (append
           '(("\\.tsx\\'" . web-mode)
           ("\\.rasi\\'" . prog-mode)) auto-mode-alist))
+      (add-to-list 'auto-mode-alist '("\\.lean\\'" . (lambda ()
+                                                     (lean4-mode)
+                                                     (whitespace-mode)
+                                                     (line-number-mode)
+                                                     (column-number-mode)
+                                                     (setq display-line-numbers 'relative)
+                                                     (setq whitespace-style '(face spaces space-mark tabs tab-mark trailing))
+                                                     (setq whitespace-display-mappings
+                                                           '((tab-mark 9 [124 9] [92 9])
+                                                           (space-mark 32 [183] [46])
+                                                           (space-mark 160 [164] [95])
+                                                           (newline-mark 10 [36 10])))
+                                                     (lsp-mode)
+                                                     (global-set-key (kbd "C-c C-i") 'lean4-toggle-info))))
 
       ;; Buffer stuff
       (recentf-mode 1)
