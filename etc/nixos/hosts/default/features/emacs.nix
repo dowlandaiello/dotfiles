@@ -3,20 +3,14 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsNativeComp.override {
-      withXwidgets = false;
-      withNativeCompilation = true;
-    };
+    package = pkgs.emacs30;
     extraPackages = epkgs:
       with epkgs; [
-        proof-general
         auctex
-        doom-themes
+        modus-themes
         nix-mode
         nix-sandbox
         vterm
-        solarized-theme
-        hardcore-mode
         python-mode
         python-black
         lsp-mode
@@ -50,7 +44,6 @@
         haskell-mode
         flycheck
         company-coq
-        gptel
         ace-jump-mode
         poly-R
         ess
@@ -59,6 +52,7 @@
           inherit (pkgs.lib) fakeHash;
           inherit (epkgs) melpaBuild compat lsp-mode dash magit-section;
         })
+        org-modern
       ];
     extraConfig = ''
       ;; Remove GUI bloat
@@ -71,6 +65,7 @@
 
       (load "auctex.el" nil t t)
 
+      (load-theme 'modus-operandi)
       (setq TeX-auto-save t)
       (setq TeX-parse-self t)
 
@@ -96,8 +91,8 @@
       (defun doom-restore-gc-h ()
              (run-at-time 1 nil (lambda () (setq gc-cons-threshold (* 100 1024 1024)))))
 
-      (add-hook 'minibuffer-setup-hook #'doom-defer-gc-h)
-      (add-hook 'minibuffer-exit-hook #'doom-restore-gc-h)
+      (add-hook 'minibuffer-setup-hook 'doom-defer-gc-h)
+      (add-hook 'minibuffer-exit-hook 'doom-restore-gc-h)
 
       (setq scroll-margin 3)
       (setq scroll-conservatively 100000)
@@ -118,9 +113,6 @@
       (setq initial-scratch-message nil)
       (setq inhibit-splash-screen t)
 
-      (load-theme 'catppuccin t)
-      (setq catppuccin-flavor 'mocha)
-      (catppuccin-reload)
       (set-fringe-mode 10)
       (set-face-attribute 'default nil :font "Iosevka Nerd Font")
       (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font")
@@ -132,7 +124,6 @@
       (projectile-mode)
       (counsel-projectile-mode)
       (setq projectile-switch-project-action #'projectile-dired)
-      (global-hardcore-mode)
 
       (setq vterm-max-scrollback 10000)
       (setq read-process-output-max (* 1024 1024)) ;; 1mb
@@ -154,10 +145,7 @@
       (add-hook 'python-mode-hook 'python-black-on-save-mode)
       (add-hook 'rust-mode-hook (lambda ()
         (lsp)))
-      (add-hook 'org-mode-hook (lambda ()
-                               (configure-org)
-                               (stylize-org)
-                               (pad-org)))
+      (with-eval-after-load 'org (global-org-modern-mode))
       (setq rust-format-on-save t)
       (add-hook 'prog-mode-hook (lambda ()
                                 (whitespace-mode)
@@ -220,34 +208,12 @@
       (setq xclip-mode t)
       (setq xclip-method (quote wl-copy))
 
-      ;; Org Mode Config
-      ;; - Use sans-serif, regular fonts for non-programming sections
-      (defun configure-org ()
-        (org-indent-mode)
-        (visual-line-mode 1)
-        (variable-pitch-mode 1))
-      (defun stylize-org ()
-        (copy-face 'org-level-1 'ivy-org)
-        (dolist (face '((org-level-1 . 1.2)
-                        (org-level-2 . 1.1)
-                        (org-level-3 . 1.05)
-                        (org-level-4 . 1.0)
-                        (org-level-5 . 1.1)
-                        (org-level-6 . 1.1)
-                        (org-level-7 . 1.1)
-                        (org-level-8 . 1.1)))
-          (set-face-attribute (car face) nil :font "Roboto" :weight 'regular :height (cdr face)))
-        (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
-        (set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch))
-        (set-face-attribute 'org-table nil :inherit '(shadow fixed-pitch))
-        (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-        (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-        (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-        (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
-      (defun pad-org ()
-        (setq visual-fill-column-width 100
-              visual-fill-column-center-text t)
-        (visual-fill-column-mode 1))
+      (setq org-agenda-files '("~/Documents/org/Todo.org"))
+      (find-file "~/Documents/org/Todo.org")
+
+      (require 'server)
+      (unless (server-running-p)
+              (server-start))
     '';
   };
 }

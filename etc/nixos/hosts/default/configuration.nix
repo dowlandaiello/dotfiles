@@ -191,8 +191,8 @@ in {
   };
 
   # Enable sound.
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
+  services.pulseaudio.enable = true;
+  services.pulseaudio.support32Bit = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.pipewire.enable = false;
@@ -244,7 +244,6 @@ in {
     pulseaudioFull
     (polybar.override { mpdSupport = true; })
     mesa
-    mesa.drivers
     libglvnd
   ];
 

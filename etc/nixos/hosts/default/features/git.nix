@@ -1,6 +1,7 @@
 {
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "Dowland Aiello";
     userEmail = "dowlandaiello@gmail.com";
     ignores = [

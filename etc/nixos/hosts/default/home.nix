@@ -28,9 +28,6 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
-      "slack"
-      "zoom"
-      "spotify"
       "obsidian"
       "vscode-extension-ms-vscode-cpptools"
     ];
@@ -82,18 +79,14 @@
     # '')
     nerd-fonts.monoid
     dmenu
-    spotify
     my_dmenu
     feh
     gruvbox-gtk-theme
     zsh-syntax-highlighting
-    python311Packages.python-lsp-server
-    vesktop
+    python313Packages.python-lsp-server
     xclip
-    slack
-    zoom-us
     black
-    python3
+    python313
     go
     libgcc
     gcc
