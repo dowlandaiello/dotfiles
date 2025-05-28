@@ -7,7 +7,6 @@ in
 {
   programs.waybar = {
     enable = true;
-    catppuccin.enable = true;
     settings = [{
       layer = "top";
       position = "top";

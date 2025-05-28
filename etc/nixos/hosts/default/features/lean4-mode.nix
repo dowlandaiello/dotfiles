@@ -1,4 +1,5 @@
-{ melpaBuild, fetchFromGitHub, fakeHash, compat, lsp-mode, dash, magit-section }:
+{ melpaBuild, fetchFromGitHub, fakeHash, compat, lsp-mode, dash, magit-section
+}:
 melpaBuild rec {
   src = fetchFromGitHub {
     owner = "leanprover-community";

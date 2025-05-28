@@ -58,6 +58,7 @@ in {
     nerd-fonts.iosevka-term
     nerd-fonts.iosevka-term-slab
     nerd-fonts.monoid
+    inter
   ];
 
   # Zsh
@@ -88,82 +89,84 @@ in {
     videoDrivers = [ "amdgpu" ];
 
     windowManager = {
-      xmonad = let colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-      in {
-        enable = true;
-        enableContribAndExtras = true;
-        config = pkgs.writeText "xmonad.hs" ''
-          import qualified Data.Map as Map
-          import XMonad
-          import XMonad.Util.SpawnOnce (spawnOnce)
-          import XMonad.Hooks.EwmhDesktops
-          import XMonad.Util.EZConfig (additionalKeys)
-          import XMonad.Util.Themes
-          import XMonad.Layout.DecorationEx
-          import XMonad.Layout.DecorationMadness
-          import XMonad.Layout.Tabbed
-          import XMonad.Layout
-          import XMonad.Layout.NoBorders
-          import XMonad.Layout.Decoration
-          import XMonad.Layout.ResizableTile
-          import XMonad.Layout.TwoPane
-          import XMonad.Layout.Spacing
-          import XMonad.Hooks.ManageDocks
-          import XMonad.StackSet
+      xmonad =
+        let colorScheme = inputs.nix-colors.colorSchemes.atelier-estuary-light;
+        in {
+          enable = true;
+          enableContribAndExtras = true;
+          config = pkgs.writeText "xmonad.hs" ''
+            import qualified Data.Map as Map
+            import XMonad
+            import XMonad.Util.SpawnOnce (spawnOnce)
+            import XMonad.Hooks.EwmhDesktops
+            import XMonad.Util.EZConfig (additionalKeys)
+            import XMonad.Util.Themes
+            import XMonad.Layout.DecorationEx
+            import XMonad.Layout.DecorationMadness
+            import XMonad.Layout.Tabbed
+            import XMonad.Layout
+            import XMonad.Layout.NoBorders
+            import XMonad.Layout.Decoration
+            import XMonad.Layout.ResizableTile
+            import XMonad.Layout.TwoPane
+            import XMonad.Layout.Spacing
+            import XMonad.Hooks.ManageDocks
+            import XMonad.StackSet
 
-          myTheme = def {
-            activeColor           = "#${colorScheme.palette.base06}"
-            , inactiveColor       = "#${colorScheme.palette.base02}"
-            , urgentColor         = "#${colorScheme.palette.base06}"
-            , activeBorderColor   = "#${colorScheme.palette.base06}"
-            , inactiveBorderColor = "#${colorScheme.palette.base02}"
-            , urgentBorderColor   = "#${colorScheme.palette.base05}"
-            , activeBorderWidth   = 1
-            , inactiveBorderWidth = 1
-            , urgentBorderWidth   = 1
-            , activeTextColor     = "#${colorScheme.palette.base00}"
-            , inactiveTextColor   = "#${colorScheme.palette.base06}"
-            , urgentTextColor     = "#${colorScheme.palette.base06}"
-            , fontName            = "Iosevka"
-            , decoWidth           = 0
-            , decoHeight          = 0
-            , windowTitleAddons   = []
-            , windowTitleIcons    = []
-          }
+            myTheme = def {
+              activeColor           = "#${colorScheme.palette.base06}"
+              , inactiveColor       = "#${colorScheme.palette.base02}"
+              , urgentColor         = "#${colorScheme.palette.base06}"
+              , activeBorderColor   = "#${colorScheme.palette.base06}"
+              , inactiveBorderColor = "#${colorScheme.palette.base02}"
+              , urgentBorderColor   = "#${colorScheme.palette.base05}"
+              , activeBorderWidth   = 1
+              , inactiveBorderWidth = 1
+              , urgentBorderWidth   = 1
+              , activeTextColor     = "#${colorScheme.palette.base00}"
+              , inactiveTextColor   = "#${colorScheme.palette.base06}"
+              , urgentTextColor     = "#${colorScheme.palette.base06}"
+              , fontName            = "Iosevka"
+              , decoWidth           = 0
+              , decoHeight          = 0
+              , windowTitleAddons   = []
+              , windowTitleIcons    = []
+            }
 
-          myLayout = avoidStruts $ tiled
-            ||| noBorders Full
-            ||| noBorders (tabbed shrinkText myTheme)
-            ||| floating
-            where
-              tiled = tallDefault shrinkText myTheme
-              floating = floatSimple shrinkText myTheme
+            myLayout = avoidStruts $ tiled
+              ||| noBorders Full
+              ||| noBorders (tabbed shrinkText myTheme)
+              ||| floating
+              where
+                tiled = tallDefault shrinkText myTheme
+                floating = floatSimple shrinkText myTheme
 
-          myStartupHook :: X ()
-          myStartupHook = do
-            spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/wa.jpg"
-            spawnOnce "${pkgs.polybar}/bin/polybar main >>/home/dowlandaiello/.config/polybar/logfile 2>&1"
+            myStartupHook :: X ()
+            myStartupHook = do
+              spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/wa.jpg"
+              spawnOnce "${pkgs.polybar}/bin/polybar main >>/home/dowlandaiello/.config/polybar/logfile 2>&1"
 
-          main = xmonad $ docks $ ewmhFullscreen $ ewmh $ def
-              { terminal    = "${pkgs.alacritty}/bin/alacritty"
-              , modMask     = mod4Mask
-              , startupHook = myStartupHook
-              , layoutHook = myLayout
-              , borderWidth = 1
-              , normalBorderColor = "#${colorScheme.palette.base02}"
-              , focusedBorderColor = "#${colorScheme.palette.base07}"
-              } `additionalKeys` [
-              ((mod4Mask, xK_Return),
-                      spawn "${pkgs.alacritty}/bin/alacritty")
-              , ((controlMask .|. shiftMask, xK_space), spawn "mydmenu_run")
-              , ((mod4Mask, xK_f), sendMessage $ JumpToLayout "Full")
-              , ((mod4Mask, xK_n), windows focusDown)
-              , ((mod4Mask, xK_p), windows focusUp)
-              , ((mod4Mask .|. shiftMask, xK_n), windows swapDown)
-              , ((mod4Mask .|. shiftMask, xK_p), windows swapUp)
-            ]
-        '';
-      };
+            main = xmonad $ docks $ ewmhFullscreen $ ewmh $ def
+                { terminal    = "${pkgs.emacs30}/bin/emacsclient --create-frame -e '(vterm (generate-new-buffer-name \"*vterm*\"))'"
+                , modMask     = mod4Mask
+                , startupHook = myStartupHook
+                , layoutHook = myLayout
+                , borderWidth = 1
+                , normalBorderColor = "#${colorScheme.palette.base02}"
+                , focusedBorderColor = "#${colorScheme.palette.base07}"
+                } `additionalKeys` [
+                ((mod4Mask, xK_Return),
+                        spawn "${pkgs.emacs30}/bin/emacsclient --create-frame -e '(vterm (generate-new-buffer-name \"*vterm*\"))'")
+                , ((controlMask .|. shiftMask, xK_space), spawn "mydmenu_run")
+                , ((mod4Mask, xK_e), spawn "${pkgs.emacs30}/bin/emacsclient --create-frame ~/Documents/org/Todo.org")
+                , ((mod4Mask, xK_f), sendMessage $ JumpToLayout "Full")
+                , ((mod4Mask, xK_n), windows focusDown)
+                , ((mod4Mask, xK_p), windows focusUp)
+                , ((mod4Mask .|. shiftMask, xK_n), windows swapDown)
+                , ((mod4Mask .|. shiftMask, xK_p), windows swapUp)
+              ]
+          '';
+        };
     };
     xrandrHeads = [
       {

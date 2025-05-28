@@ -30,7 +30,6 @@
         ivy
         swiper
         counsel
-        catppuccin-theme
         counsel-projectile
         auto-virtualenv
         xclip
@@ -53,6 +52,7 @@
           inherit (epkgs) melpaBuild compat lsp-mode dash magit-section;
         })
         org-modern
+        pdf-tools
       ];
     extraConfig = ''
       ;; Remove GUI bloat
@@ -65,7 +65,7 @@
 
       (load "auctex.el" nil t t)
 
-      (load-theme 'modus-operandi)
+      (load-theme 'modus-operandi-tinted)
       (setq TeX-auto-save t)
       (setq TeX-parse-self t)
 
@@ -116,7 +116,7 @@
       (set-fringe-mode 10)
       (set-face-attribute 'default nil :font "Iosevka Nerd Font")
       (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font")
-      (set-face-attribute 'variable-pitch nil :font "Roboto" :weight 'regular)
+      (set-face-attribute 'variable-pitch nil :font "Inter")
       (window-divider-mode +1)
       (setq window-divider-default-right-width 2 window-divider-default-bottom-width 2)
       (doom-modeline-mode 1)
@@ -145,7 +145,12 @@
       (add-hook 'python-mode-hook 'python-black-on-save-mode)
       (add-hook 'rust-mode-hook (lambda ()
         (lsp)))
-      (with-eval-after-load 'org (global-org-modern-mode))
+      (add-hook 'org-mode-hook (lambda ()
+                               (setq org-modern-star '("◉" "○" "✸" "✿"))
+                               (org-modern-mode)))
+      (add-hook 'org-agenda-finalize-hook (lambda ()
+                                          (org-modern-agenda)
+                                          (setq org-modern-star '("◉" "○" "✸" "✿"))))
       (setq rust-format-on-save t)
       (add-hook 'prog-mode-hook (lambda ()
                                 (whitespace-mode)
@@ -162,7 +167,8 @@
       ;; Flycheck
       (global-flycheck-mode)
       (setq flycheck-command-wrapper-function
-              (lambda (command) (apply 'nix-shell-command (nix-current-sandbox) command))
+              (lambda (command) (apply 'nix-shell-command (nix-current-sandbox) command)))
+      (setq
             flycheck-executable-find
               (lambda (cmd) (nix-executable-find (nix-current-sandbox) cmd)))
 
@@ -176,6 +182,7 @@
       (global-set-key (kbd "C-s") 'swiper)
       (global-set-key (kbd "C-r") 'swiper-backward)
       (global-set-key (kbd "C-c p") 'projectile-command-map)
+      (global-set-key (kbd "C-c p e") 'vterm)
 
       (setq auto-mode-alist
           (append
@@ -209,11 +216,12 @@
       (setq xclip-method (quote wl-copy))
 
       (setq org-agenda-files '("~/Documents/org/Todo.org"))
+      (setq org-latex-compiler "xelatex")
       (find-file "~/Documents/org/Todo.org")
-
-      (require 'server)
-      (unless (server-running-p)
-              (server-start))
     '';
+  };
+  services.emacs = {
+    enable = true;
+    startWithUserSession = true;
   };
 }

@@ -16,7 +16,7 @@
     ./features/polybar.nix
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  colorScheme = inputs.nix-colors.colorSchemes.atelier-estuary-light;
 
   dconf = {
     enable = true;
@@ -51,8 +51,10 @@
   home.packages = let
     tex = (pkgs.texlive.combine {
       inherit (pkgs.texlive)
-        scheme-basic dvisvgm dvipng # for preview and export as html
-        wrapfig amsmath ulem hyperref capt-of;
+        scheme-medium dvisvgm dvipng # for preview and export as html
+        wrapfig amsmath ulem hyperref capt-of
+        mathpartir
+        ec cm;
       #(setq org-latex-compiler "lualatex")
       #(setq org-preview-latex-default-process 'dvisvgm)
     });
@@ -112,6 +114,7 @@
     gdb
     llvm
     obs-studio
+    ghostscript
     tex
     (rstudioWrapper.override {
       packages = with rPackages; [ Rmpfr readr dplyr tidyverse ];
@@ -153,7 +156,7 @@
   #  /etc/profiles/per-user/dowlandaiello/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "emacs";
+    EDITOR = "${pkgs.emacs30}/bin/emacsclient";
     SHELL = "zsh";
     GOPATH = "/home/dowlandaiello/go";
     GOBIN = "/home/dowlandaiello/go/bin";
