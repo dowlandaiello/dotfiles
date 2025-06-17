@@ -32,7 +32,7 @@ in {
         bottom = false;
         top = true;
         background = "#${config.colorScheme.palette.base00}";
-        foreground = "#${config.colorScheme.palette.base07}";
+        foreground = "#${config.colorScheme.palette.base01}";
 
         modules-left = "ewmh";
 
@@ -45,7 +45,8 @@ in {
         wm-restack = "i3";
 
         border-bottom-size = 1;
-        border-top-color = "#${config.colorScheme.palette.base04}";
+        border-bottom-color = "#${config.colorScheme.palette.base02}";
+        border-top-color = "#${config.colorScheme.palette.base02}";
         line-size = 1;
       };
 
@@ -161,8 +162,9 @@ in {
       "module/ewmh" = fonts // {
         type = "internal/xworkspaces";
 
-        label-active-foreground = "#${config.colorScheme.palette.base0B}";
-        label-active-underline = "#${config.colorScheme.palette.base05}";
+        label-active-foreground = "#${config.colorScheme.palette.base01}";
+        label-inactive-foreground = "#${config.colorScheme.palette.base02}";
+        label-active-underline = "#${config.colorScheme.palette.base01}";
 
         pin-workspaces = true;
         group-by-monitor = false;

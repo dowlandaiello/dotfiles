@@ -58,7 +58,6 @@ in {
         pdf-tools
       ];
     extraConfig = ''
-      ;; Remove GUI bloat
       (scroll-bar-mode -1)
       (tool-bar-mode -1)
       (tooltip-mode -1)
@@ -66,15 +65,12 @@ in {
       (require 'lean4-mode)
       (require 'ace-jump-mode)
 
+      (setq-default line-spacing 0.1)
+
       (load "auctex.el" nil t t)
 
       (setq TeX-auto-save t)
       (setq TeX-parse-self t)
-
-      (set-face-attribute 'default nil
-                          :font "${font}"
-                          :height 140)
-      (set-face-attribute 'fixed-pitch nil :font "${font}")
 
       (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
@@ -92,6 +88,13 @@ in {
       (add-to-list 'warning-suppress-log-types '(lsp-mode))
       (add-to-list 'warning-suppress-types '(lsp-mode))
 
+      (doom-modeline-mode 1)
+      (setq doom-modeline-major-mode-icon t)
+      (setq doom-modeline-minor-modes nil)
+      (setq doom-modeline-enable-word-count t)
+      (setq doom-modeline-buffer-encoding nil)
+      (setq doom-modeline-env-version t)
+
       (defun doom-defer-gc-h ()
         (setq gc-cons-threshold most-positive-fixnum))
 
@@ -106,6 +109,7 @@ in {
         '(cursor ((t (:background "#${config.colorScheme.palette.base06}" ))))
         '(fringe ((t (:background "#${config.colorScheme.palette.base07}" ))))
         '(mode-line ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}" ))))
+        '(mode-line-inactive ((t (:foreground "#${config.colorScheme.palette.base04}" :background "#${config.colorScheme.palette.base07}" ))))
         '(region ((t (:background "#${config.colorScheme.palette.base02}" ))))
         '(secondary-selection ((t (:background "#${config.colorScheme.palette.base02}" ))))
         '(font-lock-builtin-face ((t (:foreground "#a2a371" ))))
@@ -122,14 +126,54 @@ in {
         '(line-number-current-line ((t (:background "#${config.colorScheme.palette.base04}" :foreground "#${config.colorScheme.palette.base02}"))))
         '(whitespace-space ((t (:background nil :foreground "#${config.colorScheme.palette.base02}"))))
         '(whitespace-tab ((t (:background nil :foreground "#${config.colorScheme.palette.base02}"))))
-        '(whitespace-trailing ((t (:background "#${config.colorScheme.palette.base02}" :foreground "#ffffff" :weight bold)))))
+        '(whitespace-trailing ((t (:background "#${config.colorScheme.palette.base02}" :foreground "#ffffff" :weight bold))))
+        '(isearch ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(swiper-line-face ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(swiper-match-face-1 ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(swiper-match-face-2/3/4 ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(lazy-highlight ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(match ((t (:background "#${config.colorScheme.palette.base02}"))))
+        '(ivy-current-match ((t (:background "#${config.colorScheme.palette.base02}" :weight bold))))
+        '(ivy-minibuffer-match-face-1 ((t (:"#${config.colorScheme.palette.base02}" "#ffe0f0"))))
+        '(ivy-minibuffer-match-face-2 ((t (:background "#${config.colorScheme.palette.base02}"))))
+        '(ivy-minibuffer-match-face-3 ((t (:background "#${config.colorScheme.palette.base02}"))))
+        '(ivy-minibuffer-match-face-4 ((t (:background "#${config.colorScheme.palette.base02}"))))
+        ;; Set base vterm text/background
+        '(vterm ((t (:foreground "#${config.colorScheme.palette.base01}" :background "#${config.colorScheme.palette.base00}"))))
+        ;; ANSI color remapping
+        '(vterm-color-black   ((t (:foreground "#${config.colorScheme.palette.base01}" :background "#${config.colorScheme.palette.base01}"))))
+        '(vterm-color-red     ((t (:foreground "#6b595c" :background "#6b595c"))))
+        '(vterm-color-green   ((t (:foreground "#8f9e88" :background "#8f9e88"))))
+        '(vterm-color-yellow  ((t (:foreground "#d1c6ab" :background "#d1c6ab"))))
+        '(vterm-color-blue    ((t (:foreground "#5d5a6e" :background "#5d5a6e"))))
+        '(vterm-color-magenta ((t (:foreground "#755a69" :background "#755a69"))))
+        '(vterm-color-cyan    ((t (:foreground "#525d63" :background "#525d63"))))
+        '(vterm-color-white   ((t (:foreground "#${config.colorScheme.palette.base00}" :background "#${config.colorScheme.palette.base00}"))))
+        '(doom-modeline-buffer-path
+          ((t (:foreground "#${config.colorScheme.palette.base02}" :weight bold))))
+        '(doom-modeline-project-dir
+          ((t (:foreground "#${config.colorScheme.palette.base02}" :weight bold))))
+        '(doom-modeline-major-mode
+          ((t (:foreground "#${config.colorScheme.palette.base02}" :weight bold))))
+        '(doom-modeline-minor-modes
+          ((t (:foreground "#d9a9b2" :weight semi-bold))))
+        '(doom-modeline-buffer-modified
+          ((t (:foreground "#d9a9b2" :weight bold))))
+        '(doom-modeline-buffer-state
+          ((t (:foreground "#d9a9b2" :weight bold))))
+        '(doom-modeline-info
+          ((t (:foreground "#d9a9b2" :weight semi-bold))))
+        '(window-divider ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}"))))
+        '(window-divider-first-pixel ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}"))))
+        '(window-divider-last-pixel ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}"))))
+        '(flycheck-error ((t (:foreground "#${config.colorScheme.palette.base0E}"))))
+        '(flycheck-warning ((t (:foreground "#${config.colorScheme.palette.base0C}")))))
 
-        (custom-set-faces
-         '(doom-modeline-icon-modified ((t (:foreground "#${config.colorScheme.palette.base04}"))))
-         '(doom-modeline-buffer-modified ((t (:foreground "#${config.colorScheme.palette.base04}"))))
-         '(doom-modeline-project-dir ((t (:foreground "#${config.colorScheme.palette.base04}"))))
-         '(doom-modeline-buffer-path ((t (:foreground "#${config.colorScheme.palette.base04}"))))
-         '(doom-modeline-buffer-file ((t (:foreground "#${config.colorScheme.palette.base04}")))))
+      (setq lsp-headerline-breadcrumb-enable nil)
+      (lsp-headerline-breadcrumb-mode -1)
+
+      (setq nerd-icons-color-icons nil)
+      (setq doom-modeline-major-mode-color-icon nil)
 
       (setq scroll-margin 3)
       (setq scroll-conservatively 100000)
@@ -150,12 +194,9 @@ in {
       (setq initial-scratch-message nil)
       (setq inhibit-splash-screen t)
 
-      (set-fringe-mode 10)
-      (set-face-attribute 'fixed-pitch nil :font "Iosevka")
-      (set-face-attribute 'variable-pitch nil :font "Iosevka")
+      (set-fringe-mode 0)
       (window-divider-mode +1)
       (setq window-divider-default-right-width 2 window-divider-default-bottom-width 2)
-      (doom-modeline-mode 1)
 
       (projectile-mode)
       (counsel-projectile-mode)
@@ -193,6 +234,7 @@ in {
         org-pretty-entities t
         org-agenda-tags-column 0
         org-ellipsis "…")
+      (set-cursor-color "#${config.colorScheme.palette.base06}")
       (custom-set-faces
        '(org-level-1 ((t (:height 1.5 :weight bold))))
        '(org-level-2 ((t (:height 1.3 :weight bold))))
@@ -201,8 +243,9 @@ in {
        '(org-level-5 ((t (:height 1.0 :weight bold))))
        '(org-level-6 ((t (:height 1.0 :weight bold))))
        '(org-level-7 ((t (:height 1.0 :weight bold))))
-       '(org-level-8 ((t (:height 1.0 :weight bold)))))
-      (global-org-modern-mode)
+       '(org-level-8 ((t (:height 1.0 :weight bold))))
+       '(org-todo ((t (:foreground "#${config.colorScheme.palette.base04}" :background "#${config.colorScheme.palette.base02}")))))
+
       (setq rust-format-on-save t)
       (add-hook 'prog-mode-hook (lambda ()
                                 (whitespace-mode)
@@ -275,6 +318,12 @@ in {
 
       (setq org-agenda-files '("~/Documents/org/Todo.org"))
       (find-file "~/Documents/org/Todo.org")
+
+      (set-face-attribute 'default nil
+                          :font "${font}"
+                          :height 140)
+
+      (add-to-list 'default-frame-alist '(font . "${font}"))
     '';
   };
   services.emacs = {

@@ -115,18 +115,18 @@ in {
             import XMonad.StackSet
 
             myTheme = def {
-              activeColor           = "#${colorScheme.palette.base06}"
-              , inactiveColor       = "#${colorScheme.palette.base02}"
-              , urgentColor         = "#${colorScheme.palette.base06}"
-              , activeBorderColor   = "#${colorScheme.palette.base06}"
-              , inactiveBorderColor = "#${colorScheme.palette.base02}"
-              , urgentBorderColor   = "#${colorScheme.palette.base05}"
+              activeColor           = "${colorScheme.palette.base06}"
+              , inactiveColor       = "${colorScheme.palette.base02}"
+              , urgentColor         = "${colorScheme.palette.base06}"
+              , activeBorderColor   = "${colorScheme.palette.base01}"
+              , inactiveBorderColor = "${colorScheme.palette.base02}"
+              , urgentBorderColor   = "${colorScheme.palette.base05}"
               , activeBorderWidth   = 1
               , inactiveBorderWidth = 1
               , urgentBorderWidth   = 1
-              , activeTextColor     = "#${colorScheme.palette.base00}"
-              , inactiveTextColor   = "#${colorScheme.palette.base06}"
-              , urgentTextColor     = "#${colorScheme.palette.base06}"
+              , activeTextColor     = "${colorScheme.palette.base00}"
+              , inactiveTextColor   = "${colorScheme.palette.base06}"
+              , urgentTextColor     = "${colorScheme.palette.base06}"
               , fontName            = "${import ./features/font.nix}"
               , decoWidth           = 0
               , decoHeight          = 0
@@ -153,8 +153,8 @@ in {
                 , startupHook = myStartupHook
                 , layoutHook = myLayout
                 , borderWidth = 1
-                , normalBorderColor = "#${colorScheme.palette.base02}"
-                , focusedBorderColor = "#${colorScheme.palette.base07}"
+                , normalBorderColor = "${colorScheme.palette.base02}"
+                , focusedBorderColor = "${colorScheme.palette.base04}"
                 } `additionalKeys` [
                 ((mod4Mask, xK_Return),
                         spawn "${pkgs.emacs30}/bin/emacsclient --create-frame -e '(vterm (generate-new-buffer-name \"*vterm*\"))'")

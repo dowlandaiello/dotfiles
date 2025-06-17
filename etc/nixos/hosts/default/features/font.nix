@@ -1,1 +1,2 @@
-"VictorMono Nerd Font Mono"
+"IosevkaTerm Nerd Font Mono"
+
