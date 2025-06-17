@@ -16,7 +16,7 @@
     ./features/polybar.nix
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.atelier-estuary-light;
+  colorScheme = import ./features/colorscheme.nix;
 
   dconf = {
     enable = true;
@@ -54,13 +54,15 @@
         scheme-medium dvisvgm dvipng # for preview and export as html
         wrapfig amsmath ulem hyperref capt-of
         mathpartir
+        minted
+        upquote
         ec cm;
       #(setq org-latex-compiler "lualatex")
       #(setq org-preview-latex-default-process 'dvisvgm)
     });
     my_dmenu = pkgs.writeShellScriptBin "mydmenu_run" ''
       #!/bin/sh
-      dmenu_run  -nb "#${config.colorScheme.palette.base00}" -nf "#${config.colorScheme.palette.base07}" -sf "#${config.colorScheme.palette.base00}" -sb "#${config.colorScheme.palette.base07}"
+      dmenu_run  -nb "#${config.colorScheme.palette.base00}" -nf "#${config.colorScheme.palette.base01}" -sf "#${config.colorScheme.palette.base00}" -sb "#${config.colorScheme.palette.base01}"
     '';
   in with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly

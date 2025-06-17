@@ -1,20 +1,22 @@
 { config, ... }:
 
+let font = import ./font.nix; in
+
 {
   programs.alacritty = {
     enable = true;
     settings = {
       font = {
         normal = {
-          family = "IosevkaTerm Nerd Font";
+          family = "${font}";
           style = "Light";
         };
         bold = {
-          family = "IosevkaTerm Nerd Font";
+          family = "${font}";
           style = "Medium";
         };
         italic = {
-          family = "IosevkaTerm Nerd Font";
+          family = "${font}";
           style = "Light Italic";
         };
         size = 5;
@@ -46,7 +48,7 @@
         };
         primary = {
           background = "0x${config.colorScheme.palette.base00}";
-          foreground = "0x${config.colorScheme.palette.base06}";
+          foreground = "0x${config.colorScheme.palette.base01}";
         };
       };
       terminal.shell.program = "nu";

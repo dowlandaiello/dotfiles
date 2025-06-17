@@ -59,6 +59,7 @@ in {
     nerd-fonts.iosevka-term-slab
     nerd-fonts.monoid
     inter
+    nerd-fonts.victor-mono
   ];
 
   # Zsh
@@ -90,7 +91,7 @@ in {
 
     windowManager = {
       xmonad =
-        let colorScheme = inputs.nix-colors.colorSchemes.atelier-estuary-light;
+        let colorScheme = import ./features/colorscheme.nix;
         in {
           enable = true;
           enableContribAndExtras = true;
@@ -126,7 +127,7 @@ in {
               , activeTextColor     = "#${colorScheme.palette.base00}"
               , inactiveTextColor   = "#${colorScheme.palette.base06}"
               , urgentTextColor     = "#${colorScheme.palette.base06}"
-              , fontName            = "Iosevka"
+              , fontName            = "${import ./features/font.nix}"
               , decoWidth           = 0
               , decoHeight          = 0
               , windowTitleAddons   = []

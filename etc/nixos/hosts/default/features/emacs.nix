@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
-{
+let font = import ./font.nix;
+
+in {
   programs.emacs = {
     enable = true;
     package = pkgs.emacs30;
@@ -36,6 +38,7 @@
         rust-mode
         direnv
         solidity-mode
+        base16-theme
         web-mode
         typescript-mode
         prettier-js
@@ -65,9 +68,13 @@
 
       (load "auctex.el" nil t t)
 
-      (load-theme 'modus-operandi-tinted)
       (setq TeX-auto-save t)
       (setq TeX-parse-self t)
+
+      (set-face-attribute 'default nil
+                          :font "${font}"
+                          :height 140)
+      (set-face-attribute 'fixed-pitch nil :font "${font}")
 
       (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
@@ -94,6 +101,36 @@
       (add-hook 'minibuffer-setup-hook 'doom-defer-gc-h)
       (add-hook 'minibuffer-exit-hook 'doom-restore-gc-h)
 
+      (custom-set-faces
+        '(default ((t (:foreground "#${config.colorScheme.palette.base05}" :background "#${config.colorScheme.palette.base00}" ))))
+        '(cursor ((t (:background "#${config.colorScheme.palette.base06}" ))))
+        '(fringe ((t (:background "#${config.colorScheme.palette.base07}" ))))
+        '(mode-line ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}" ))))
+        '(region ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(secondary-selection ((t (:background "#${config.colorScheme.palette.base02}" ))))
+        '(font-lock-builtin-face ((t (:foreground "#a2a371" ))))
+        '(font-lock-comment-face ((t (:foreground "#${config.colorScheme.palette.base03}" ))))
+        '(font-lock-function-name-face ((t (:foreground "#${config.colorScheme.palette.base0D}" ))))
+        '(font-lock-keyword-face ((t (:foreground "#${config.colorScheme.palette.base0E}" ))))
+        '(font-lock-string-face ((t (:foreground "#${config.colorScheme.palette.base0B}" ))))
+        '(font-lock-type-face ((t (:foreground "#${config.colorScheme.palette.base0A}" ))))
+        '(font-lock-constant-face ((t (:foreground "#${config.colorScheme.palette.base09}" ))))
+        '(font-lock-variable-name-face ((t (:foreground "#${config.colorScheme.palette.base08}" ))))
+        '(minibuffer-prompt ((t (:foreground "#${config.colorScheme.palette.base01}" :bold t ))))
+        '(font-lock-warning-face ((t (:foreground "#${config.colorScheme.palette.base04}" :bold t ))))
+        '(line-number ((t (:foreground "#${config.colorScheme.palette.base04}" :background "#${config.colorScheme.palette.base02}"))))
+        '(line-number-current-line ((t (:background "#${config.colorScheme.palette.base04}" :foreground "#${config.colorScheme.palette.base02}"))))
+        '(whitespace-space ((t (:background nil :foreground "#${config.colorScheme.palette.base02}"))))
+        '(whitespace-tab ((t (:background nil :foreground "#${config.colorScheme.palette.base02}"))))
+        '(whitespace-trailing ((t (:background "#${config.colorScheme.palette.base02}" :foreground "#ffffff" :weight bold)))))
+
+        (custom-set-faces
+         '(doom-modeline-icon-modified ((t (:foreground "#${config.colorScheme.palette.base04}"))))
+         '(doom-modeline-buffer-modified ((t (:foreground "#${config.colorScheme.palette.base04}"))))
+         '(doom-modeline-project-dir ((t (:foreground "#${config.colorScheme.palette.base04}"))))
+         '(doom-modeline-buffer-path ((t (:foreground "#${config.colorScheme.palette.base04}"))))
+         '(doom-modeline-buffer-file ((t (:foreground "#${config.colorScheme.palette.base04}")))))
+
       (setq scroll-margin 3)
       (setq scroll-conservatively 100000)
       (setq scroll-preserve-screen-position 1)
@@ -114,9 +151,8 @@
       (setq inhibit-splash-screen t)
 
       (set-fringe-mode 10)
-      (set-face-attribute 'default nil :font "Iosevka Nerd Font")
-      (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font")
-      (set-face-attribute 'variable-pitch nil :font "Inter")
+      (set-face-attribute 'fixed-pitch nil :font "Iosevka")
+      (set-face-attribute 'variable-pitch nil :font "Iosevka")
       (window-divider-mode +1)
       (setq window-divider-default-right-width 2 window-divider-default-bottom-width 2)
       (doom-modeline-mode 1)
@@ -145,12 +181,28 @@
       (add-hook 'python-mode-hook 'python-black-on-save-mode)
       (add-hook 'rust-mode-hook (lambda ()
         (lsp)))
-      (add-hook 'org-mode-hook (lambda ()
-                               (setq org-modern-star '("◉" "○" "✸" "✿"))
-                               (org-modern-mode)))
-      (add-hook 'org-agenda-finalize-hook (lambda ()
-                                          (org-modern-agenda)
-                                          (setq org-modern-star '("◉" "○" "✸" "✿"))))
+      (setq
+        ;; Edit settings
+        org-auto-align-tags nil
+        org-tags-column 0
+        org-catch-invisible-edits 'show-and-error
+        org-special-ctrl-a/e t
+        org-insert-heading-respect-content t
+        ;; Org styling, hide markup etc.
+        org-hide-emphasis-markers t
+        org-pretty-entities t
+        org-agenda-tags-column 0
+        org-ellipsis "…")
+      (custom-set-faces
+       '(org-level-1 ((t (:height 1.5 :weight bold))))
+       '(org-level-2 ((t (:height 1.3 :weight bold))))
+       '(org-level-3 ((t (:height 1.2 :weight bold))))
+       '(org-level-4 ((t (:height 1.1 :weight bold))))
+       '(org-level-5 ((t (:height 1.0 :weight bold))))
+       '(org-level-6 ((t (:height 1.0 :weight bold))))
+       '(org-level-7 ((t (:height 1.0 :weight bold))))
+       '(org-level-8 ((t (:height 1.0 :weight bold)))))
+      (global-org-modern-mode)
       (setq rust-format-on-save t)
       (add-hook 'prog-mode-hook (lambda ()
                                 (whitespace-mode)
@@ -183,6 +235,12 @@
       (global-set-key (kbd "C-r") 'swiper-backward)
       (global-set-key (kbd "C-c p") 'projectile-command-map)
       (global-set-key (kbd "C-c p e") 'vterm)
+      (defun reopen-file-as-root ()
+             (interactive)
+             (when buffer-file-name
+                   (let ((file (concat "/su::" buffer-file-name)))
+                   (find-alternate-file file))))
+      (global-set-key (kbd "C-c r") 'reopen-file-as-root)
 
       (setq auto-mode-alist
           (append
@@ -216,7 +274,6 @@
       (setq xclip-method (quote wl-copy))
 
       (setq org-agenda-files '("~/Documents/org/Todo.org"))
-      (setq org-latex-compiler "xelatex")
       (find-file "~/Documents/org/Todo.org")
     '';
   };
