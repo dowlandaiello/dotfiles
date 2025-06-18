@@ -42,6 +42,8 @@ in {
   console.useXkbConfig = true; # use xkb.options in tty.
 
   fonts.packages = with pkgs; [
+    comic-neue
+    nerd-fonts.comic-shanns-mono
     font-awesome
     noto-fonts
     noto-fonts-cjk-sans
@@ -60,6 +62,7 @@ in {
     nerd-fonts.monoid
     inter
     nerd-fonts.victor-mono
+    comfortaa
   ];
 
   # Zsh
@@ -79,6 +82,27 @@ in {
 
   # Configure keymap in X11
   services.autorandr.enable = true;
+  services.picom = {
+    enable = true;
+    package = pkgs.picom-next;
+    backend = "glx";
+    settings = {
+      corner-radius = 12;
+      rounded-corners = true;
+      rounded-corners-exclude = [
+        "class_g = 'Polybar'"
+      ];
+      inactive-opacity = 0.9;
+      active-opacity = 0.98;
+      frame-opacity = 1.0;
+      inactive-opacity-override = true;
+      round-borders = 1;
+      blur-background = true;
+      blur-method = "dual_kawase";
+      blur-strength = 7;
+      vsync = true;
+    };
+  };
   services.xserver = {
     enable = true;
 
@@ -111,6 +135,7 @@ in {
             import XMonad.Layout.ResizableTile
             import XMonad.Layout.TwoPane
             import XMonad.Layout.Spacing
+            import XMonad.Layout.Gaps
             import XMonad.Hooks.ManageDocks
             import XMonad.StackSet
 
@@ -121,9 +146,9 @@ in {
               , activeBorderColor   = "${colorScheme.palette.base01}"
               , inactiveBorderColor = "${colorScheme.palette.base02}"
               , urgentBorderColor   = "${colorScheme.palette.base05}"
-              , activeBorderWidth   = 1
+              , activeBorderWidth   = 2
               , inactiveBorderWidth = 1
-              , urgentBorderWidth   = 1
+              , urgentBorderWidth   = 2
               , activeTextColor     = "${colorScheme.palette.base00}"
               , inactiveTextColor   = "${colorScheme.palette.base06}"
               , urgentTextColor     = "${colorScheme.palette.base06}"
@@ -139,12 +164,12 @@ in {
               ||| noBorders (tabbed shrinkText myTheme)
               ||| floating
               where
-                tiled = tallDefault shrinkText myTheme
+                tiled = gaps [(U,10),(D,10),(L,10),(R,10)] $ spacing 8 $ tallDefault shrinkText myTheme
                 floating = floatSimple shrinkText myTheme
 
             myStartupHook :: X ()
             myStartupHook = do
-              spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/wa.jpg"
+              spawnOnce "${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpapers/bruh.jpg"
               spawnOnce "${pkgs.polybar}/bin/polybar main >>/home/dowlandaiello/.config/polybar/logfile 2>&1"
 
             main = xmonad $ docks $ ewmhFullscreen $ ewmh $ def

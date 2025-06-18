@@ -21,6 +21,7 @@ in {
         all-the-icons
         treesit-grammars.with-all-grammars
         leerzeichen
+        org-superstar
         rainbow-delimiters
         which-key
         helpful
@@ -54,7 +55,6 @@ in {
           inherit (pkgs.lib) fakeHash;
           inherit (epkgs) melpaBuild compat lsp-mode dash magit-section;
         })
-        org-modern
         pdf-tools
       ];
     extraConfig = ''
@@ -88,13 +88,6 @@ in {
       (add-to-list 'warning-suppress-log-types '(lsp-mode))
       (add-to-list 'warning-suppress-types '(lsp-mode))
 
-      (doom-modeline-mode 1)
-      (setq doom-modeline-major-mode-icon t)
-      (setq doom-modeline-minor-modes nil)
-      (setq doom-modeline-enable-word-count t)
-      (setq doom-modeline-buffer-encoding nil)
-      (setq doom-modeline-env-version t)
-
       (defun doom-defer-gc-h ()
         (setq gc-cons-threshold most-positive-fixnum))
 
@@ -104,7 +97,12 @@ in {
       (add-hook 'minibuffer-setup-hook 'doom-defer-gc-h)
       (add-hook 'minibuffer-exit-hook 'doom-restore-gc-h)
 
+      (doom-modeline-mode 1)
+
       (custom-set-faces
+        '(flycheck-fringe-error ((t (:foreground "#d9a9b2"))))
+        '(flycheck-fringe-warning ((t (:foreground "#d9a9b2"))))
+        '(flycheck-fringe-info ((t (:foreground "#d9a9b2"))))
         '(default ((t (:foreground "#${config.colorScheme.palette.base05}" :background "#${config.colorScheme.palette.base00}" ))))
         '(cursor ((t (:background "#${config.colorScheme.palette.base06}" ))))
         '(fringe ((t (:background "#${config.colorScheme.palette.base07}" ))))
@@ -148,6 +146,12 @@ in {
         '(vterm-color-blue    ((t (:foreground "#5d5a6e" :background "#5d5a6e"))))
         '(vterm-color-magenta ((t (:foreground "#755a69" :background "#755a69"))))
         '(vterm-color-cyan    ((t (:foreground "#525d63" :background "#525d63"))))
+        '(vterm-color-bright-red     ((t (:foreground "#9c767d" :background "#9c767d"))))
+        '(vterm-color-bright-green   ((t (:foreground "#9ab38f" :background "#9ab38f"))))
+        '(vterm-color-bright-yellow  ((t (:foreground "#d1c6ab" :background "#d1c6ab"))))
+        '(vterm-color-bright-blue    ((t (:foreground "#5d5a6e" :background "#5d5a6e"))))
+        '(vterm-color-bright-magenta ((t (:foreground "#755a69" :background "#755a69"))))
+        '(vterm-color-bright-cyan    ((t (:foreground "#525d63" :background "#525d63"))))
         '(vterm-color-white   ((t (:foreground "#${config.colorScheme.palette.base00}" :background "#${config.colorScheme.palette.base00}"))))
         '(doom-modeline-buffer-path
           ((t (:foreground "#${config.colorScheme.palette.base02}" :weight bold))))
@@ -166,8 +170,9 @@ in {
         '(window-divider ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}"))))
         '(window-divider-first-pixel ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}"))))
         '(window-divider-last-pixel ((t (:foreground "#${config.colorScheme.palette.base07}" :background "#${config.colorScheme.palette.base01}"))))
-        '(flycheck-error ((t (:foreground "#${config.colorScheme.palette.base0E}"))))
-        '(flycheck-warning ((t (:foreground "#${config.colorScheme.palette.base0C}")))))
+        '(doom-modeline-error ((t (:foreground "#d9a9b2"))))
+        '(doom-modeline-warning ((t (:foreground "#d9a9b2"))))
+        '(lsp-face-highlight-textual ((t (:foreground "#${config.colorScheme.palette.base04}" :background "#${config.colorScheme.palette.base02}")))))
 
       (setq lsp-headerline-breadcrumb-enable nil)
       (lsp-headerline-breadcrumb-mode -1)
@@ -223,31 +228,62 @@ in {
       (add-hook 'rust-mode-hook (lambda ()
         (lsp)))
       (setq
-        ;; Edit settings
         org-auto-align-tags nil
         org-tags-column 0
         org-catch-invisible-edits 'show-and-error
         org-special-ctrl-a/e t
         org-insert-heading-respect-content t
-        ;; Org styling, hide markup etc.
         org-hide-emphasis-markers t
         org-pretty-entities t
         org-agenda-tags-column 0
         org-ellipsis "…")
       (set-cursor-color "#${config.colorScheme.palette.base06}")
       (custom-set-faces
-       '(org-level-1 ((t (:height 1.5 :weight bold))))
-       '(org-level-2 ((t (:height 1.3 :weight bold))))
-       '(org-level-3 ((t (:height 1.2 :weight bold))))
-       '(org-level-4 ((t (:height 1.1 :weight bold))))
-       '(org-level-5 ((t (:height 1.0 :weight bold))))
-       '(org-level-6 ((t (:height 1.0 :weight bold))))
-       '(org-level-7 ((t (:height 1.0 :weight bold))))
-       '(org-level-8 ((t (:height 1.0 :weight bold))))
-       '(org-todo ((t (:foreground "#${config.colorScheme.palette.base04}" :background "#${config.colorScheme.palette.base02}")))))
+       '(org-link ((t (:foreground "#${config.colorScheme.palette.base04}" :underline t)))))
+      (add-hook 'org-mode-hook (lambda ()
+        (set-face-attribute 'variable-pitch nil :family "Comic Neue" :height 140)
+        (set-face-attribute 'fixed-pitch nil :family "IosevkaTerm Nerd Font Mono" :height 140)
+        (set-face-attribute 'default nil :family "IosevkaTerm Nerd Font Mono" :height 140)
+        (set-face-attribute 'variable-pitch nil :family "Comic Neue" :height 140)
+        (set-face-attribute 'fixed-pitch nil :family "IosevkaTerm Nerd Font Mono" :height 140)
+        (face-remap-add-relative 'default 'variable-pitch)
+        (dolist (face '(org-level-1
+                  org-level-2
+                  org-level-3
+                  org-level-4
+                  org-level-5
+                  org-level-6
+                  org-level-7
+                  org-level-8
+                  org-document-title
+                  org-document-info
+                  org-document-info-keyword
+                  org-meta-line
+                  org-drawer
+                  org-quote))
+                  (set-face-attribute face nil :inherit 'variable-pitch))
+        (custom-set-faces
+          '(org-level-1 ((t (:inherit variable-pitch :weight bold :height 1.5))))
+          '(org-level-2 ((t (:inherit variable-pitch :weight bold :height 1.4))))
+          '(org-level-3 ((t (:inherit variable-pitch :weight semi-bold :height 1.3))))
+          '(org-block ((t (:inherit fixed-pitch :background "#${config.colorScheme.palette.base02}" :foreground "#${config.colorScheme.palette.base04}"))))
+          '(org-block-begin-line ((t (:inherit fixed-pitch :background "#${config.colorScheme.palette.base02}" :foreground "#${config.colorScheme.palette.base01}" :slant italic))))
+          '(org-block-end-line ((t (:inherit fixed-pitch :background "#${config.colorScheme.palette.base02}" :foreground "#${config.colorScheme.palette.base01}" :slant italic))))
+          '(org-todo ((t (:inherit fixed-pitch :background "#${config.colorScheme.palette.base02}" :foreground "#${config.colorScheme.palette.base04}" :weight bold))))
+          '(org-done ((t (:inherit fixed-pitch :background "#${config.colorScheme.palette.base02}" :foreground "#${config.colorScheme.palette.base04}" :weight semi-bold)))))
+        (setq org-cycle-separator-lines 2)
+
+        (org-superstar-mode 1)
+        (org-indent-mode 1)
+        (visual-line-mode 1)
+        (setq prettify-symbols-alist '(("TODO" . "TODO 🐌") ("DONE" . "DONE ✅")))
+        (setq org-superstar-headline-bullets-list '("🌺" "🌹" "🌸" "🌷" "🌿" "🌱" "🍃"))
+        (prettify-symbols-mode 1)
+      ))
 
       (setq rust-format-on-save t)
       (add-hook 'prog-mode-hook (lambda ()
+                                (set-face-attribute 'fixed-pitch nil :font "IosevkaTerm Nerd Font Mono" :height 140)
                                 (whitespace-mode)
                                 (line-number-mode)
                                 (column-number-mode)
@@ -291,6 +327,7 @@ in {
           ("\\.rasi\\'" . prog-mode)) auto-mode-alist))
       (add-to-list 'auto-mode-alist '("\\.lean\\'" . (lambda ()
                                                      (lean4-mode)
+                                                     (set-face-attribute 'fixed-pitch nil :font "IosevkaTerm Nerd Font Mono" :height 140)
                                                      (whitespace-mode)
                                                      (line-number-mode)
                                                      (column-number-mode)
@@ -319,11 +356,10 @@ in {
       (setq org-agenda-files '("~/Documents/org/Todo.org"))
       (find-file "~/Documents/org/Todo.org")
 
-      (set-face-attribute 'default nil
-                          :font "${font}"
-                          :height 140)
-
-      (add-to-list 'default-frame-alist '(font . "${font}"))
+      (set-face-attribute 'default nil :font "IosevkaTerm Nerd Font Mono" :height 140)
+      (set-face-attribute 'fixed-pitch nil :font "IosevkaTerm Nerd Font Mono" :height 140)
+      (set-face-attribute 'variable-pitch nil :font "Comic Neue" :height 140)
+      (setq initial-frame-alist '((font . "IosevkaTerm Nerd Font Mono")))
     '';
   };
   services.emacs = {

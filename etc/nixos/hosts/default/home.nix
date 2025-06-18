@@ -116,6 +116,7 @@
     gdb
     llvm
     obs-studio
+    picom-next
     ghostscript
     tex
     (rstudioWrapper.override {
@@ -144,6 +145,15 @@
     #   [*.org]
     #   BasedOnStyles = Microsoft
     # '';
+    ".config/picom/picom.conf".text = ''
+      backend = "glx";
+      corner-radius = 10;
+      shadow = true;
+      shadow-radius = 15;
+      blur-method = "dual_kawase";
+      blur-strength = 7;
+      vsync = true;
+    '';
   };
 
   # Home Manager can also manage your environment variables through
